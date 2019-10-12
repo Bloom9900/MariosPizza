@@ -11,7 +11,7 @@ public class Menu {
 
     @Override
     public String toString() {
-        return "Menuén indeholder: " + menu;
+        return "Menuén indeholder: \n" + menu;
     }
 
 }

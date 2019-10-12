@@ -17,5 +17,19 @@ public class Main {
         Pizza mafia = new Pizza (61,14);
         
         Menu menu = new Menu();
+        
+        menu.tilføjPizza(vesuvio);
+        menu.tilføjPizza(amerikaner);
+        menu.tilføjPizza(cacciatore);
+        menu.tilføjPizza(dennis);
+        menu.tilføjPizza(bertil);
+        menu.tilføjPizza(silvia);
+        menu.tilføjPizza(victoria);
+        menu.tilføjPizza(toronfo);
+        menu.tilføjPizza(capricciosa);
+        menu.tilføjPizza(hawai);
+        menu.tilføjPizza(leBlissola);
+        menu.tilføjPizza(venezia);
+        menu.tilføjPizza(mafia);
     }
 }

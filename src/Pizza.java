@@ -24,4 +24,10 @@ public class Pizza {
     public void setPizzaNr(int pizzaNr) {
         this.pizzaNr = pizzaNr;
     }
+
+    @Override
+    public String toString() {
+        return "Pizza Nr: " + pizzaNr + " koster " + pris + "kr.\n";
+    }
+    
 }
