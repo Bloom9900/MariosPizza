@@ -11,7 +11,11 @@ public class Menu {
 
     @Override
     public String toString() {
-        return "Menuén indeholder: \n" + menu;
+        String result = "Menuén indeholder:\n";
+        for (Pizza pizza : menu) {
+            result += pizza.toString() + "\n";            
+        }
+        return result;
     }
 
 }
