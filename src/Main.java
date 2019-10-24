@@ -38,7 +38,7 @@ public class Main {
         
         //No touching! haha
         Bestilling orders = new Bestilling();
-        orders.brugerDialog(ArrayList < Pizza > menu);
+        orders.brugerDialog(ArrayList<Pizza>);
         
         System.out.println(menu);
         System.out.println(orders);

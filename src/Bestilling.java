@@ -19,6 +19,7 @@ public class Bestilling {
         int svarDialog = myScan.nextInt();
         if (svarDialog == 1) {
             System.out.println("Indtast kundens navn");
+            myScan.nextLine();
             kundeNavn = myScan.nextLine();
             System.out.println("Indtast pizza'ens nummer");
             pizzaNumber = myScan.nextInt();
