@@ -17,7 +17,7 @@ public class Bestilling {
     public void fjernPizza(Pizza pizza) {
         bestilling.remove(pizza);
     }
-
+    //Tjek efter?
     public void brugerDialog() {
         Scanner myScan = new Scanner(System.in);
         System.out.println("Tryk 1 for at tilføje en bestilling.\nEller 2 for at fjerne bestilling.");
