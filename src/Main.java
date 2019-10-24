@@ -5,7 +5,6 @@ public class Main {
 
     public static void main(String[] args) {
         Menu menu = new Menu();
-        Bestilling bestilling = new Bestilling();
 
         Pizza vesuvio = new Pizza("Vesuvio",57, 1, "tomatsauce, ost og oregano");
         Pizza amerikaner = new Pizza("Amerikaner",53, 2, "tomatsauce, ost, oksefars og oregano");
