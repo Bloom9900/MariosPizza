@@ -35,10 +35,8 @@ public class Main {
         menu.tilføjPizza(venezia);
         menu.tilføjPizza(mafia);
         
-        
-        //No touching! haha
         Bestilling orders = new Bestilling();
-        orders.brugerDialog(ArrayList<Pizza>);
+        orders.brugerDialog(menu);
         
         System.out.println(menu);
         System.out.println(orders);

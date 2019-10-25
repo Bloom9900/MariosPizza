@@ -12,8 +12,6 @@ public class Menu {
     public void setMenu(ArrayList<Pizza> menu) {
         this.menu = menu;
     }
-    
-    
 
     public void tilføjPizza(Pizza pizza) {
         menu.add(pizza);
