@@ -7,9 +7,11 @@ public class Bestilling {
     private ArrayList<Pizza> bestilling;
     private String kundeNavn;
     private int pizzaNumber;
-
+    private int bestillingsNr;
+    
     public Bestilling() {
         this.bestilling = new ArrayList<Pizza>();
+        this.bestillingsNr = IDFactory.getID();
     }
 
     //In progress
@@ -26,7 +28,7 @@ public class Bestilling {
             bestilling.add(menu.menu.get(pizzaNumber - 1));
         }
         if (svarDialog == 2) {
-            System.out.println(orders.bestilling);
+            bestilling.remove(menu.menu.get(bestillingsNr));
         }
     }
 
@@ -53,6 +55,4 @@ public class Bestilling {
         }
         return "Bestillinger: \nBestillings nummer: " + bestillingsNr + bestilling + " Til - " + kundeNavn;
     }
-    
-    
 }

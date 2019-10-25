@@ -1,12 +1,13 @@
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
-    
+
     public static void main(String[] args) {
         Menu menu = new Menu();
-        
+
         Pizza vesuvio = new Pizza("Vesuvio", 57, 1, "tomatsauce, ost og oregano");
         Pizza amerikaner = new Pizza("Amerikaner", 53, 2, "tomatsauce, ost, oksefars og oregano");
         Pizza cacciatore = new Pizza("Cacciatore", 63, 4, "tomatsauce, ost, pepperoni og oregano");
@@ -20,7 +21,7 @@ public class Main {
         Pizza leBlissola = new Pizza("Le Blissola", 61, 12, "tomatsauce, ost, skinke, rejer og oregano");
         Pizza venezia = new Pizza("Venezia", 61, 13, "tomatsauce, ost, skinke, bacon og oregano");
         Pizza mafia = new Pizza("Mafia", 61, 14, "tomatsauce, ost, pepperoni, bacon, løg og oregano");
-        
+
         menu.tilføjPizza(vesuvio);
         menu.tilføjPizza(amerikaner);
         menu.tilføjPizza(cacciatore);
@@ -34,11 +35,29 @@ public class Main {
         menu.tilføjPizza(leBlissola);
         menu.tilføjPizza(venezia);
         menu.tilføjPizza(mafia);
-        
-        Bestilling orders = new Bestilling();
-        orders.brugerDialog(menu);
-        
-        System.out.println(menu);
-        System.out.println(orders);
+
+        Scanner myScan = new Scanner(System.in);
+        System.out.println("Tast 1 for at vise menuen.\nTast 2 for at redigere bestillinger.\nTast 3 for at lave statistik.\nTast 4 for at slukke programmet");
+        int svar = myScan.nextInt();
+
+        switch (svar) {
+            case 1:
+                System.out.println(menu);
+                break;
+            case 2:
+                Bestilling orders = new Bestilling();
+                orders.brugerDialog(menu);
+                System.out.println(orders);
+                break;
+        //To be made
+            case 3:
+                break;
+        //Exit loop?
+            case 4:
+                break;
+            default:
+                System.out.println("Something went wrong.");
+                break;
+        }
     }
 }
