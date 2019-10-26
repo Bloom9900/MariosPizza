@@ -37,27 +37,42 @@ public class Main {
         menu.tilføjPizza(mafia);
 
         Scanner myScan = new Scanner(System.in);
-        System.out.println("Tast 1 for at vise menuen.\nTast 2 for at redigere bestillinger.\nTast 3 for at lave statistik.\nTast 4 for at slukke programmet");
-        int svar = myScan.nextInt();
+        int n = 3;
+        int svar;
 
-        switch (svar) {
-            case 1:
-                System.out.println(menu);
-                break;
-            case 2:
-                Bestilling orders = new Bestilling();
-                orders.brugerDialog(menu);
-                System.out.println(orders);
-                break;
-        //To be made
-            case 3:
-                break;
-        //Exit loop?
-            case 4:
-                break;
-            default:
-                System.out.println("Something went wrong.");
-                break;
+        // do while loop gør at man kan se menuen efter man har fortaget sig en action
+        //så programmet ikke bare slukker efter man har lavet en af valgmulighederne
+        do {
+            System.out.println("Tast 1 for at vise menuen.\nTast 2 for at redigere bestillinger.\nTast 3 for at lave statistik.\nTast 4 for at slukke programmet");
+            svar = myScan.nextInt();
+            switch (svar) {
+
+                case 1:
+                    System.out.println(menu);
+                    break;
+                case 2:
+
+                    Bestilling orders = new Bestilling();
+                    orders.brugerDialog(menu);
+                    System.out.println(orders);
+
+                    break;
+                //To be made
+                case 3:
+                    break;
+                // case 4 "sluk programmet" virker nu, hvis man bare trykke 4 så afsluttes
+                // loopen
+                case 4:
+                    break;
+                default:
+                    System.out.println("Noget gik galt..");
+                    break;
+            }
+
+        } while (svar < 4);
+        {
+            System.out.println("Du kan kun vælge mellem 1-4, prøv igen.");
         }
     }
+
 }

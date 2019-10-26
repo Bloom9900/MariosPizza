@@ -8,7 +8,7 @@ public class Bestilling {
     private String kundeNavn;
     private int pizzaNumber;
     private int bestillingsNr;
-    
+
     public Bestilling() {
         this.bestilling = new ArrayList<Pizza>();
         this.bestillingsNr = IDFactory.getID();
@@ -46,7 +46,6 @@ public class Bestilling {
 //        }
 //        return result;
 //    }
-
     @Override
     public String toString() {
         int bestillingsNr = 0;
