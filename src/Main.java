@@ -8,10 +8,11 @@ public class Main {
     public static void main(String[] args) {
         Menu menu = new Menu();
 
-        Pizza vesuvio = new Pizza("Vesuvio", 57, 1, "tomatsauce, ost og oregano");
+        Pizza vesuvio = new Pizza("Vesuvio", 57, 1, "tomatsauce, ost, skinke og oregano");
         Pizza amerikaner = new Pizza("Amerikaner", 53, 2, "tomatsauce, ost, oksefars og oregano");
-        Pizza cacciatore = new Pizza("Cacciatore", 63, 4, "tomatsauce, ost, pepperoni og oregano");
-        Pizza dennis = new Pizza("Dennis", 65, 5, "tomatsauce, ost, kødsauce, spaghetti, cocktailpølser og oregano");
+        Pizza cacciatore = new Pizza("Cacciatore", 63, 3, "tomatsauce, ost, pepperoni og oregano");
+        Pizza carbona = new Pizza ("Carbona", 57, 4, "tomatsauce, ost, kødsauce, spaghetti, cocktailpølser og oregano");
+        Pizza dennis = new Pizza("Dennis", 65, 5, "tomatsauce, ost, skinke, pepperoni, cocktailpølser og oregano");
         Pizza bertil = new Pizza("Bertil", 57, 6, "tomatsauce, ost, bacon og oregano");
         Pizza silvia = new Pizza("Silvia", 61, 7, "tomatsauce, ost, pepperoni, rød peber, løg, oliven og oregano");
         Pizza victoria = new Pizza("Victoria", 61, 8, "tomatsauce, ost, skinke, ananas, champignon, løg og oregano");
@@ -70,9 +71,6 @@ public class Main {
             }
 
         } while (svar < 4);
-        {
-            System.out.println("Du kan kun vælge mellem 1-4, prøv igen.");
-        }
     }
 
 }

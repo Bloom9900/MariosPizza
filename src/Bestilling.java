@@ -17,7 +17,7 @@ public class Bestilling {
     //In progress
     public void brugerDialog(Menu menu) {
         Scanner myScan = new Scanner(System.in);
-        System.out.println("Tryk 1 for at tilføje en bestilling.\nEller 2 for at fjerne bestilling.");
+        System.out.println("Tryk 1 for at tilføje en bestilling.\nTyk 2 for at fjerne bestilling.\nTryk 3 for at vise aktuelle bestillinger");
         int svarDialog = myScan.nextInt();
         if (svarDialog == 1) {
             System.out.println("Indtast kundens navn");
@@ -29,6 +29,11 @@ public class Bestilling {
         }
         if (svarDialog == 2) {
             bestilling.remove(menu.menu.get(bestillingsNr));
+        }
+        if (svarDialog ==3) {
+            System.out.println(bestilling);
+        } else {
+            System.out.println("Du skal vælge mellem 1-3, prøv igen.");
         }
     }
 
@@ -52,6 +57,6 @@ public class Bestilling {
         for (Pizza pizza : bestilling) {
             bestillingsNr++;
         }
-        return "Bestillinger: \nBestillings nummer: " + bestillingsNr + bestilling + " Til - " + kundeNavn;
+        return "Bestillinger: \nBestillings nummer: " + bestillingsNr + "\n" + bestilling + " Til - " + kundeNavn;
     }
 }
