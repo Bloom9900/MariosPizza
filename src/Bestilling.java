@@ -17,9 +17,9 @@ public class Bestilling {
 
     public void brugerDialog(Menu menu) {
         int svarDialog = 0;
-        while (svarDialog != -1) {
+        while (svarDialog != 3) {
             Scanner myScan = new Scanner(System.in);
-            System.out.println("Tryk 1 for at tilføje en bestilling.\nTyk 2 for at fjerne bestilling.\nTryk 3 for at vise aktuelle bestillinger");
+            System.out.println("Tryk 1 for at tilføje en bestilling.\nTyk 2 for at fjerne bestilling.\nTryk 3 for at gå tilbage.");
             svarDialog = myScan.nextInt();
             if (svarDialog == 1) {
                 System.out.println("Indtast kundens navn");
@@ -45,7 +45,8 @@ public class Bestilling {
         for (Pizza pizza : bestilling) {
             bestillingsNr++;
             message += "Bestillings nummer: " + bestillingsNr;
-            message += "Pizza: " + pizza.getNavn();
+            message += "\nPizza: " + pizza.getNavn();
+            message += 
         }
         return message + " Til - " + kundeNavn + "\n";
     }
