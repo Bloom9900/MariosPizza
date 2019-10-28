@@ -20,7 +20,7 @@ public class Statistik {
             csvWriter.flush();
             csvWriter.close();
         } catch (FileNotFoundException ex) {
-            System.out.println(e.getMessage());
+            System.out.println(ex.getMessage());
         }
 
     }

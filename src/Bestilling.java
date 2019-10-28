@@ -1,41 +1,14 @@
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Bestilling {
 
-    private ArrayList<Pizza> bestilling;
-    private String kundeNavn;
-    private int pizzaNumber;
+    private ArrayList<Ordre> bestilling;
     private int bestillingsNr;
 
     public Bestilling() {
-
-        this.bestilling = new ArrayList<Pizza>();
+        this.bestilling = new ArrayList<Ordre>();
         this.bestillingsNr = IDFactory.getID();
-    }
-
-    public void brugerDialog(Menu menu) {
-        int svarDialog = 0;
-        while (svarDialog != 3) {
-            Scanner myScan = new Scanner(System.in);
-            System.out.println("Tryk 1 for at tilføje en bestilling.\nTyk 2 for at fjerne bestilling.\nTryk 3 for at gå tilbage.");
-            svarDialog = myScan.nextInt();
-            if (svarDialog == 1) {
-                System.out.println("Indtast kundens navn");
-                myScan.nextLine();
-                kundeNavn = myScan.nextLine();
-                System.out.println("Indtast pizza'ens nummer");
-                pizzaNumber = myScan.nextInt();
-                bestilling.add(menu.menu.get(pizzaNumber - 1));
-                //oversigt.add(bestilling);
-
-            }
-            if (svarDialog == 2) {
-                bestilling.remove(menu.menu.get(bestillingsNr));
-            }
-        }
-
     }
 
     @Override
