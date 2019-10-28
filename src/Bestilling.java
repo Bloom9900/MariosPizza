@@ -30,18 +30,13 @@ public class Bestilling {
         if (svarDialog == 2) {
             bestilling.remove(menu.menu.get(bestillingsNr));
         }
-        if (svarDialog ==3) {
-            System.out.println(bestilling);
-        } else {
-            System.out.println("Du skal vælge mellem 1-3, prøv igen.");
-        }
     }
 
     @Override
     public String toString() {
         int bestillingsNr = 0;
         for (Pizza pizza : bestilling) {
-            IDFactory.getID();
+            bestillingsNr++;
         }
         return "Bestillinger: \nBestillings nummer: " + bestillingsNr + "\n" + bestilling + " Til - " + kundeNavn;
     }
