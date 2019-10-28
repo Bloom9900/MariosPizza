@@ -38,7 +38,6 @@ public class Main {
         menu.tilføjPizza(mafia);
 
         Scanner myScan = new Scanner(System.in);
-        int n = 3;
         int svar;
 
         // do while loop gør at man kan se menuen efter man har fortaget sig en action
@@ -66,11 +65,11 @@ public class Main {
                 case 4:
                     break;
                 default:
-                    System.out.println("Noget gik galt..");
+                    System.out.println("Du skal vælge mellem 1-4");
                     break;
             }
 
-        } while (svar < 4);
+        } while (svar <= 3);
     }
 
 }

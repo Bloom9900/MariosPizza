@@ -37,25 +37,11 @@ public class Bestilling {
         }
     }
 
-//    @Override
-//    public String toString() {
-//        String result = "Orderen indeholder:\n";
-//        for (Pizza pizza : bestilling) {
-//            if (pizza.getAntal() > 1) {
-//                result += pizza.getAntal() + " Pizzaer nr: " + pizza.getPizzaNr() + "\n";
-//            } else {
-//                result += pizza.getAntal() + " Pizza nr: " + pizza.getPizzaNr() + "\n";
-//
-//            }
-//
-//        }
-//        return result;
-//    }
     @Override
     public String toString() {
         int bestillingsNr = 0;
         for (Pizza pizza : bestilling) {
-            bestillingsNr++;
+            IDFactory.getID();
         }
         return "Bestillinger: \nBestillings nummer: " + bestillingsNr + "\n" + bestilling + " Til - " + kundeNavn;
     }
