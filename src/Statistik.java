@@ -6,7 +6,8 @@ import java.io.IOException;
 
 public class Statistik {
     
-    public void filen() throws IOException {        
+    public void filen() throws IOException {
+        int myArr[] = new int[15];
         
         try (FileWriter csvWriter = new Filewriter("MariosStatistik.csv")) {
             csvWriter.append("Pizza");

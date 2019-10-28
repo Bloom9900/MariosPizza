@@ -35,7 +35,7 @@ public class Bestilling {
             System.out.println("Indtast pizza'ens nummer");
             pizzaNumber = myScan.nextInt();
             bestilling.add(menu.menu.get(pizzaNumber - 1));
-            Oversigt.add(bestilling);
+            //oversigt.add(bestilling);
             
         }
         if (svarDialog == 2) {

@@ -26,6 +26,7 @@ public class Main {
         menu.tilføjPizza(vesuvio);
         menu.tilføjPizza(amerikaner);
         menu.tilføjPizza(cacciatore);
+        menu.tilføjPizza(carbona);
         menu.tilføjPizza(dennis);
         menu.tilføjPizza(bertil);
         menu.tilføjPizza(silvia);
@@ -40,7 +41,7 @@ public class Main {
         Scanner myScan = new Scanner(System.in);
         int svar;int n = 10;
         
-        Bestilling oversigt = new Bestilling(new ArrayList<ArrayList<Pizza>>(n));
+        //Bestilling oversigt = new Bestilling(new ArrayList<ArrayList<Pizza>>(n));
         // do while loop gør at man kan se menuen efter man har fortaget sig en action
         //så programmet ikke bare slukker efter man har lavet en af valgmulighederne
         do {
@@ -54,7 +55,8 @@ public class Main {
                 case 2:
                     Bestilling orders = new Bestilling();
                     orders.brugerDialog(menu);
-                    System.out.println(oversigt);
+                    System.out.println(orders);
+                    //System.out.println(oversigt);
 
                     break;
                 //To be made
