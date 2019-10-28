@@ -38,8 +38,9 @@ public class Main {
         menu.tilføjPizza(mafia);
 
         Scanner myScan = new Scanner(System.in);
-        int svar;
-
+        int svar;int n = 10;
+        
+        Bestilling oversigt = new Bestilling(new ArrayList<ArrayList<Pizza>>(n));
         // do while loop gør at man kan se menuen efter man har fortaget sig en action
         //så programmet ikke bare slukker efter man har lavet en af valgmulighederne
         do {
@@ -51,10 +52,9 @@ public class Main {
                     System.out.println(menu);
                     break;
                 case 2:
-
                     Bestilling orders = new Bestilling();
                     orders.brugerDialog(menu);
-                    System.out.println(orders);
+                    System.out.println(oversigt);
 
                     break;
                 //To be made
