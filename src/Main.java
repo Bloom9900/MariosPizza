@@ -37,6 +37,7 @@ public class Main {
         menu.tilføjPizza(leBlissola);
         menu.tilføjPizza(venezia);
         menu.tilføjPizza(mafia);
+        
 
         Scanner myScan = new Scanner(System.in);
         int svar;
