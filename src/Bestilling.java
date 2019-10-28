@@ -45,9 +45,9 @@ public class Bestilling {
         for (Pizza pizza : bestilling) {
             bestillingsNr++;
             message += "Bestillings nummer: " + bestillingsNr;
-            message += "\nPizza: " + pizza.getNavn();
-            message += 
+            message += "\nPizza: " + pizza.getPizzaNr() + "." + pizza.getNavn() + ": " + pizza.getTopping() + " - " + pizza.getPris() + ",-\n";
+            message += " Til - " + kundeNavn + "\n";
         }
-        return message + " Til - " + kundeNavn + "\n";
+        return message;
     }
 }
