@@ -8,13 +8,13 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Menu menu = new Menu();
-        
+
         String filename = "Data/ActiveOrders";
 
         Pizza vesuvio = new Pizza("Vesuvio", 57, 1, "tomatsauce, ost, skinke og oregano");
         Pizza amerikaner = new Pizza("Amerikaner", 53, 2, "tomatsauce, ost, oksefars og oregano");
         Pizza cacciatore = new Pizza("Cacciatore", 63, 3, "tomatsauce, ost, pepperoni og oregano");
-        Pizza carbona = new Pizza ("Carbona", 57, 4, "tomatsauce, ost, kødsauce, spaghetti, cocktailpølser og oregano");
+        Pizza carbona = new Pizza("Carbona", 57, 4, "tomatsauce, ost, kødsauce, spaghetti, cocktailpølser og oregano");
         Pizza dennis = new Pizza("Dennis", 65, 5, "tomatsauce, ost, skinke, pepperoni, cocktailpølser og oregano");
         Pizza bertil = new Pizza("Bertil", 57, 6, "tomatsauce, ost, bacon og oregano");
         Pizza silvia = new Pizza("Silvia", 61, 7, "tomatsauce, ost, pepperoni, rød peber, løg, oliven og oregano");
@@ -56,13 +56,13 @@ public class Main {
                 case 2:
                     System.out.println("Tast 1 for at lave ny ordre\nTast 2 for a slette ordre");
                     svar = myScan.nextInt();
-                    if(svar == 1) {
+                    if (svar == 1) {
                         orders.makeOrder(menu);
                         orders.writeToFile(filename);
                     }
-//                    if (svar == 2) {
-//                        orders.removeOrder(odr);
-//                    }
+                    if (svar == 2) {
+                        orders.removeOrder(odr);
+                    }
                     break;
                 case 3:
                     break;
