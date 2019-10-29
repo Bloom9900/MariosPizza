@@ -37,7 +37,7 @@ public class Main {
         menu.tilføjPizza(leBlissola);
         menu.tilføjPizza(venezia);
         menu.tilføjPizza(mafia);
-        
+
         Orderlist orders = new Orderlist();
 
         Scanner myScan = new Scanner(System.in);
@@ -53,21 +53,15 @@ public class Main {
                 case 2:
                     orders.makeOrder(menu);
                     System.out.println(orders);
-                    //System.out.println(oversigt);
-
                     break;
-                //To be made
                 case 3:
                     break;
-                // case 4 "sluk programmet" virker nu, hvis man bare trykke 4 så afsluttes
-                // loopen
                 case 4:
                     break;
                 default:
                     System.out.println("Du skal vælge mellem 1-4");
                     break;
             }
-
         } while (svar <= 4);
     }
 

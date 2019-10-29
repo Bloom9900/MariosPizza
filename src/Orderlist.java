@@ -20,6 +20,10 @@ public class Orderlist {
     public void removeOrder(Order odr) {
         olist.remove(odr);
     }
+    
+    public void viewOrders(Order odr) {
+        System.out.println(olist);
+    }
 
     @Override
     public String toString() {
