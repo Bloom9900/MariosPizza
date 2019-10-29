@@ -8,36 +8,36 @@ public class Order {
     private String kundeNavn;
     private int antal;
     private int pizzaNr;
+    private int orderID;
 
     public Order() {
+        this.orderID = IDFactory.getID();
     }
+
+    public int getOrderID() {
+        return orderID;
+    }
+    
+    
+
+    public ArrayList<Pizza> getPizzas() {
+        return pizzas;
+    }
+    
+    
+    
 
     public void userDialogue(Menu menu) {
-        int reply = 0;
-        while (reply != 2) {
-            Scanner myScan = new Scanner(System.in);
-            System.out.println("Press 1 to add order\nPress 2 to exit program.");
-            reply = myScan.nextInt();
-            myScan.nextLine();
-            if (reply == 1) {
-                System.out.println("Type costumer name: ");
-                kundeNavn = myScan.nextLine();
-                System.out.println("Type amount of pizzas: ");
-                antal = myScan.nextInt();
-                myScan.nextLine();
-                for (int i = 0; i < antal; i++) {
-                    System.out.println("Type pizzas number");
-                    pizzaNr = myScan.nextInt();
-                    pizzas.add(menu.menu.get(pizzaNr - 1));
-                }
-            }
+        Scanner myScan = new Scanner(System.in);
+        System.out.println("Type costumer name: ");
+        kundeNavn = myScan.nextLine();
+        System.out.println("Type amount of pizzas: ");
+        antal = myScan.nextInt();
+        myScan.nextLine();
+        for (int i = 0; i < antal; i++) {
+            System.out.println("Type pizzas number");
+            pizzaNr = myScan.nextInt();
+            pizzas.add(menu.menu.get(pizzaNr - 1));
         }
     }
-
-    @Override
-    public String toString() {
-        return "Order{" + "pizzas=" + pizzas + ", kundeNavn=" + kundeNavn + ", pizzaNumber=" + pizzaNr + ", amountOfPizzas=" + antal + '}';
-    }
-    
-    
 }

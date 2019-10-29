@@ -1,12 +1,15 @@
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Menu menu = new Menu();
+        
+        String filename = "Data/ActiveOrders";
 
         Pizza vesuvio = new Pizza("Vesuvio", 57, 1, "tomatsauce, ost, skinke og oregano");
         Pizza amerikaner = new Pizza("Amerikaner", 53, 2, "tomatsauce, ost, oksefars og oregano");
@@ -51,8 +54,15 @@ public class Main {
                     System.out.println(menu);
                     break;
                 case 2:
-                    orders.makeOrder(menu);
-                    System.out.println(orders);
+                    System.out.println("Tast 1 for at lave ny ordre\nTast 2 for a slette ordre");
+                    svar = myScan.nextInt();
+                    if(svar == 1) {
+                        orders.makeOrder(menu);
+                        orders.writeToFile(filename);
+                    }
+//                    if (svar == 2) {
+//                        orders.removeOrder(odr);
+//                    }
                     break;
                 case 3:
                     break;
