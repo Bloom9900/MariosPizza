@@ -38,15 +38,10 @@ public class Main {
         menu.tilføjPizza(venezia);
         menu.tilføjPizza(mafia);
         
+        Orderlist orders = new Orderlist();
 
         Scanner myScan = new Scanner(System.in);
         int svar;
-        int n = 10;
-        
-        //Bestilling oversigt = new Bestilling(new ArrayList<ArrayList<Pizza>>(n));
-        // do while loop gør at man kan se menuen efter man har fortaget sig en action
-        //så programmet ikke bare slukker efter man har lavet en af valgmulighederne
-        Bestilling orders = new Bestilling();
         do {
             System.out.println("Tast 1 for at vise menuen.\nTast 2 for at redigere bestillinger.\nTast 3 for at lave statistik.\nTast 4 for at slukke programmet");
             svar = myScan.nextInt();
@@ -56,7 +51,7 @@ public class Main {
                     System.out.println(menu);
                     break;
                 case 2:
-                    orders.brugerDialog(menu);
+                    orders.makeOrder(menu);
                     System.out.println(orders);
                     //System.out.println(oversigt);
 

@@ -1,10 +1,10 @@
 
 public class IDFactory {
 
-    private static int bestillingsID;
+    private static int orderNum;
 
     public static int getID() {
-        return bestillingsID++;
+        return orderNum++;
     }
 
 }
