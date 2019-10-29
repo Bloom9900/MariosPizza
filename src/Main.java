@@ -73,7 +73,7 @@ public class Main {
                     break;
             }
 
-        } while (svar <= 3);
+        } while (svar <= 4);
     }
 
 }
