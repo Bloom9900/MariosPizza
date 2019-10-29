@@ -17,15 +17,34 @@ public class Order {
     public int getOrderID() {
         return orderID;
     }
-    
-    
+
+    public String getKundeNavn() {
+        return kundeNavn;
+    }
+
+    public void setKundeNavn(String kundeNavn) {
+        this.kundeNavn = kundeNavn;
+    }
+
+    public int getAntal() {
+        return antal;
+    }
+
+    public void setAntal(int antal) {
+        this.antal = antal;
+    }
+
+    public int getPizzaNr() {
+        return pizzaNr;
+    }
+
+    public void setPizzaNr(int pizzaNr) {
+        this.pizzaNr = pizzaNr;
+    }
 
     public ArrayList<Pizza> getPizzas() {
         return pizzas;
     }
-    
-    
-    
 
     public void userDialogue(Menu menu) {
         Scanner myScan = new Scanner(System.in);

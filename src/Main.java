@@ -54,14 +54,18 @@ public class Main {
                     System.out.println(menu);
                     break;
                 case 2:
-                    System.out.println("Tast 1 for at lave ny ordre\nTast 2 for a slette ordre");
+                    System.out.println("Tast 1 for at lave ny ordre\nTast 2 for a slette ordre\nTast 3 for at vise ordre");
                     svar = myScan.nextInt();
                     if (svar == 1) {
                         orders.makeOrder(menu);
                         orders.writeToFile(filename);
                     }
                     if (svar == 2) {
+                        System.out.println(orders.toStringView());
                         orders.removeOrder(odr);
+                    }
+                    if (svar == 3) {
+                        System.out.println(orders.toStringView());
                     }
                     break;
                 case 3:

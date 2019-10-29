@@ -48,5 +48,16 @@ public class Orderlist {
         }
         return message;
     }
+    
+    public String toStringView() {
+        String view = "";
+        for (Order order : olist) {
+            view += "Bestilling nummer: ";
+            view += order.getOrderID() + ". ";
+            view += order.getPizzas();
+            view += "\n";
+        }
+        return view;
+    }
 
 }
