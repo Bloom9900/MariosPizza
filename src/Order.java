@@ -31,35 +31,3 @@ public class Order {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-/*
-public void userDialogue(Menu menu) {
-    int reply = 0;
-    while (reply != 3) {
-        Scanner myScan = new Scanner(System.in);
-        System.out.println("Tryk 1 for at tilføje en pizza til din ordre\nTryk 3 for at gå tilbage.");
-        reply = myScan.nextInt();
-        if (reply == 1) {
-            System.out.println("Indtast kundens navn");
-            myScan.nextLine();
-            kundeNavn = myScan.nextLine();
-            System.out.println("Indtast pizza'ens nummer");
-            pizzaNr = myScan.nextInt();
-            pizzaer.add(menu.menu.get(pizzaNr - 1));
-
-            }
-            //Fjern pizzaer fra pizzaer arraylist command
-            //pizzaer.remove(menu.menu.get(bestillingsNr));
-            
-        }
-    }
-}
-*/
