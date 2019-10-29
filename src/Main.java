@@ -49,7 +49,6 @@ public class Main {
             System.out.println("Tast 1 for at vise menuen.\nTast 2 for at redigere bestillinger.\nTast 3 for at lave statistik.\nTast 4 for at slukke programmet");
             svar = myScan.nextInt();
             switch (svar) {
-
                 case 1:
                     System.out.println(menu);
                     break;

@@ -54,7 +54,7 @@ public class Orderlist {
         for (Order order : olist) {
             view += "Bestilling nummer: ";
             view += order.getOrderID() + ". ";
-            view += order.getPizzas();
+            view += order.getPizzas() + "Til - " + order.getKundeNavn();
             view += "\n";
         }
         return view;
