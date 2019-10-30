@@ -46,7 +46,7 @@ public class Main {
 		Scanner myScan = new Scanner(System.in);
 		int svar;
 		do {
-			System.out.println("Tast 1 for at vise menuen.\nTast 2 for at redigere bestillinger.\nTast 3 for at lave statistik.\nTast 4 for at slukke programmet");
+			System.out.println("Tast 1 for at vise menuen.\nTast 2 for at redigere bestillinger.\nTast 3 for at slukke programmet");
 			svar = myScan.nextInt();
 			switch (svar) {
 				case 1:
@@ -73,10 +73,10 @@ public class Main {
 				case 3:
 					break;
 				default:
-					System.out.println("Du skal vælge mellem 1-4");
+					System.out.println("Du skal vælge mellem 1-3");
 					break;
 			}
-		} while (svar != 4);
+		} while (svar != 3);
 	}
 	
 }

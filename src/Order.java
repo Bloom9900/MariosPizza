@@ -93,6 +93,6 @@ public class Order {
                 message += "\n";
             }
         
-        return message + "\n"+"________________"+"\n";
+        return message + "\n"+"\n";
     }
 }
