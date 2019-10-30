@@ -63,13 +63,14 @@ public class Orderlist {
     public String toString() {
         String message = "";
         for (Order order : olist) {
+            message +="\n"+ "Order nr: "+ order.getOrderID() +":"+"\n" + "Kunde: "+ order.getKundeNavn()+"\n";
             for (Pizza pizza : order.getPizzas()) {
-                message += order.getOrderID() + ";";
+                //message += order.getOrderID() + ";";
                 message += pizza.getNavn() + ";";
                 message += "\n";
             }
         }
-        return message;
+        return message + "\n"+"________________"+"\n";
     }
     
     public String toStringView() {

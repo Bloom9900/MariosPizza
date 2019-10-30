@@ -1,32 +1,42 @@
-2;Victor;10:30; [5: Dennis: tomatsauce, ost, skinke, pepperoni, cocktailpølser og oregano: 65@2: Amerikaner: tomatsauce, ost, oksefars og oregano: 53];
-2;Victor;10:30; [5: Dennis: tomatsauce, ost, skinke, pepperoni, cocktailpølser og oregano: 65@2: Amerikaner: tomatsauce, ost, oksefars og oregano: 53];
-3;Victor;10:30; [5: Dennis: tomatsauce, ost, skinke, pepperoni, cocktailpølser og oregano: 65@2: Amerikaner: tomatsauce, ost, oksefars og oregano: 53];
-3;Victor;10:30; [5: Dennis: tomatsauce, ost, skinke, pepperoni, cocktailpølser og oregano: 65@2: Amerikaner: tomatsauce, ost, oksefars og oregano: 53];
-1;Vesuvio;
-1;Carbona;
-1;Vesuvio;
-1;Carbona;
-2;Carbona;
-2;Bertil;
-2;Amerikaner;
+
+Order nr: 1:
+Kunde: Artem
 1;Cacciatore;
-1;Dennis;
-1;Amerikaner;
-1;Silvia;
+1;Vesuvio;
+
+________________
+
+Order nr: 1:
+Kunde: Artem
 1;Cacciatore;
-1;Dennis;
-1;Amerikaner;
-1;Silvia;
+1;Vesuvio;
+
+Order nr: 2:
+Kunde: Artem
+2;Vesuvio;
 2;Amerikaner;
-2;Dennis;
-2;Dennis;
-1;Toronfo;
-1;Toronfo;
-2;Victoria;
-1;Amerikaner;
-1;Amerikaner;
 2;Cacciatore;
-1;Dennis;
-1;Dennis;
-2;Toronfo;
-2;Carbona;
+
+________________
+
+Order nr: 1:
+Kunde: Artem
+Vesuvio;
+Amerikaner;
+
+________________
+
+Order nr: 1:
+Kunde: Artem
+Vesuvio;
+Amerikaner;
+
+Order nr: 2:
+Kunde: Jannich
+Vesuvio;
+Amerikaner;
+Cacciatore;
+Carbona;
+Dennis;
+
+________________
