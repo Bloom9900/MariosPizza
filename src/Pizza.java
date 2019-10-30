@@ -1,4 +1,4 @@
-
+//@Jannich
 public class Pizza {
 
     private String navn;

@@ -1,4 +1,4 @@
-
+//@Jannich
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -83,5 +83,16 @@ public class Order {
             pizzaNr = myScan.nextInt();
             pizzas.add(menu.menu.get(pizzaNr - 1));
         }
+    }
+    
+    public String listView() {
+        String message = "";
+            message +="\n"+ "Order nr: "+ this.orderID +":"+"\n" + "Kunde: "+ this.kundeNavn+"\n";
+            for (Pizza pizza : this.pizzas) {
+                message += pizza.getNavn() + ";";
+                message += "\n";
+            }
+        
+        return message + "\n"+"________________"+"\n";
     }
 }

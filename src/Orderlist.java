@@ -1,4 +1,4 @@
-
+//@Jannich
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Orderlist {
-
+    private final static String filename = "Data/ActiveOrders";
     private ArrayList<Order> olist = new ArrayList<>();
     private int orderNum;
 
@@ -16,10 +16,11 @@ public class Orderlist {
         this.orderNum = IDFactory.getID();
     }
 
-    public void makeOrder(Menu menu) {
+    public void makeOrder(Menu menu) throws IOException {
         Order odr = new Order();
         odr.userDialogue(menu);
         olist.add(odr);
+        writeOrderToFile(filename, odr);
     }
 
     public void writeToFile(String filename) throws IOException {
@@ -27,6 +28,14 @@ public class Orderlist {
         FileWriter fw = new FileWriter(file, true);
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write(this.toString());
+        bw.close();
+    }
+    
+    public void writeOrderToFile(String filename, Order odr) throws IOException {
+        File file = new File(filename);
+        FileWriter fw = new FileWriter(file, true);
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(odr.listView());
         bw.close();
     }
 
@@ -65,7 +74,6 @@ public class Orderlist {
         for (Order order : olist) {
             message +="\n"+ "Order nr: "+ order.getOrderID() +":"+"\n" + "Kunde: "+ order.getKundeNavn()+"\n";
             for (Pizza pizza : order.getPizzas()) {
-                //message += order.getOrderID() + ";";
                 message += pizza.getNavn() + ";";
                 message += "\n";
             }

@@ -57,7 +57,7 @@ public class Main {
 					svar = myScan.nextInt();
 					if (svar == 1) {
 						orders.makeOrder(menu);
-						orders.writeToFile(filename);
+//						orders.writeToFile(filename);
 					}
 					if (svar == 2) {
 						
