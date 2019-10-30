@@ -1,9 +1,11 @@
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Orderlist {
 
@@ -28,8 +30,29 @@ public class Orderlist {
         bw.close();
     }
 
-    public void removeOrder(Order odr) {
-        olist.remove(odr);
+    public void getActiveOrdersFrom(String filename) throws FileNotFoundException{
+        File fhActj = new File(filename);
+	Scanner myScanner = new Scanner(fhActj);
+	while (myScanner.hasNextLine()) {
+		String line = myScanner.nextLine();
+	}
+    }
+
+    public void removeOrder(int ordreId) throws IOException {
+	    Order markedForArchive = null;
+	    for (Order o : olist) {
+		    if (o.getOrderID() == ordreId) {
+			    markedForArchive = o;
+		    }
+	    }
+	    olist.remove(olist.indexOf(markedForArchive));
+
+        File fhArk = new File("Data/AllOrders");
+        FileWriter fwArk = new FileWriter(fhArk, true);
+        BufferedWriter bwArk = new BufferedWriter(fwArk);
+	bwArk.write(markedForArchive.toString());
+	bwArk.newLine();
+	bwArk.close();
     }
 
     public void viewOrders(Order odr) {
@@ -52,9 +75,9 @@ public class Orderlist {
     public String toStringView() {
         String view = "";
         for (Order order : olist) {
-            view += "Bestilling nummer: ";
-            view += order.getOrderID() + ". ";
-            view += order.getPizzas() + "Til - " + order.getKundeNavn();
+            view += order.getOrderID() + ";";
+            view += order.getKundeNavn()+ ";";
+            view += order.getPizzas();
             view += "\n";
         }
         return view;

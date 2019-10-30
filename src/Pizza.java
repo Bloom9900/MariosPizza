@@ -47,7 +47,12 @@ public class Pizza {
 
     @Override
     public String toString() {
-        return pizzaNr + ". " + navn + ": " + topping + " " + pris + "kr.";
+	    String  msg= "";
+	    msg+=pizzaNr + ":";
+	    msg+=navn + ":";
+	    msg+=topping + ":";
+	    msg+=pris;
+	    return msg;
     }
 
 }

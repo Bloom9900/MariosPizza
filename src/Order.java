@@ -1,4 +1,5 @@
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -45,6 +46,22 @@ public class Order {
     public ArrayList<Pizza> getPizzas() {
         return pizzas;
     }
+
+	@Override
+	public String toString() {
+		LocalTime timestamp = LocalTime.now();
+		String msg = "";
+		msg += this.getOrderID() + ";";
+		msg += this.getKundeNavn()+ ";";
+		msg += timestamp + ";[";
+		for (Pizza p: pizzas ) {
+			msg+= p.toString();
+			msg+="@";
+		}
+		msg += "]";
+		return msg;
+	}
+    
 
     public void userDialogue(Menu menu) {
         Scanner myScan = new Scanner(System.in);
