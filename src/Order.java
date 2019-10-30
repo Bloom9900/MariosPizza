@@ -46,6 +46,14 @@ public class Order {
     public ArrayList<Pizza> getPizzas() {
         return pizzas;
     }
+    
+    public int getTotalPris() {
+        int totalPris = 0;
+        for (Pizza pizza : pizzas) {
+            totalPris += pizza.getPris();
+        }
+        return totalPris;
+    }
 
 	@Override
 	public String toString() {

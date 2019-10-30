@@ -77,7 +77,8 @@ public class Orderlist {
         for (Order order : olist) {
             view += order.getOrderID() + ";";
             view += order.getKundeNavn()+ ";";
-            view += order.getPizzas();
+            view += order.getPizzas() + ";";
+            view += order.getTotalPris();
             view += "\n";
         }
         return view;

@@ -72,13 +72,11 @@ public class Main {
 					break;
 				case 3:
 					break;
-				case 4:
-					break;
 				default:
 					System.out.println("Du skal vælge mellem 1-4");
 					break;
 			}
-		} while (svar <= 4);
+		} while (svar != 4);
 	}
 	
 }
