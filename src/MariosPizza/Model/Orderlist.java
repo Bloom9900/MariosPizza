@@ -1,4 +1,8 @@
+package MariosPizza.Model;
+
 //@Jannich
+import MariosPizza.Model.Menu;
+import MariosPizza.Model.Pizza;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;

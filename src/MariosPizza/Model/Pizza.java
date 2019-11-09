@@ -1,3 +1,5 @@
+package MariosPizza.Model;
+
 //@Jannich
 public class Pizza {
 

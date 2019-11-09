@@ -1,4 +1,9 @@
+package MariosPizza.Model;
+
 //@Jannich
+import MariosPizza.Model.IDFactory;
+import MariosPizza.Model.Menu;
+import MariosPizza.Model.Pizza;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,4 +1,6 @@
 
+import MariosPizza.Model.Order;
+import MariosPizza.Model.Pizza;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;

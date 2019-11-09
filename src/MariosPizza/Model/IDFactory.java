@@ -1,3 +1,5 @@
+package MariosPizza.Model;
+
 //@Artem
 public class IDFactory {
 

@@ -1,4 +1,10 @@
+package MariosPizza.Main;
+
 //@Artem
+import Controllers.Controller;
+import MariosPizza.Model.Orderlist;
+import MariosPizza.Model.Menu;
+import MariosPizza.Model.Pizza;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,43 +46,8 @@ public class Main {
 		menu.tilføjPizza(leBlissola);
 		menu.tilføjPizza(venezia);
 		menu.tilføjPizza(mafia);
-		
-		Orderlist orders = new Orderlist();
-		
-		Scanner myScan = new Scanner(System.in);
-		int svar;
-		do {
-			System.out.println("Tast 1 for at vise menuen.\nTast 2 for at redigere bestillinger.\nTast 3 for at slukke programmet");
-			svar = myScan.nextInt();
-			switch (svar) {
-				case 1:
-					System.out.println(menu);
-					break;
-				case 2:
-					System.out.println("Tast 1 for at lave ny ordre\nTast 2 for a slette ordre\nTast 3 for at vise ordre");
-					svar = myScan.nextInt();
-					if (svar == 1) {
-						orders.makeOrder(menu);
-//						orders.writeToFile(filename);
-					}
-					if (svar == 2) {
-						
-						System.out.println(orders.toStringView());
-						System.out.println("Tast nr på ordre der skal slettes (overføres til arkiv)");
-						int id = myScan.nextInt();
-						orders.removeOrder(id);
-					}
-					if (svar == 3) {
-						System.out.println(orders.toStringView());
-					}
-					break;
-				case 3:
-					break;
-				default:
-					System.out.println("Du skal vælge mellem 1-3");
-					break;
-			}
-		} while (svar != 3);
+                
+                Controller.runProgram(menu);
 	}
 	
 }
