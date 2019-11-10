@@ -11,7 +11,7 @@ public class Controller {
 
     public static void runProgram(Menu menu) throws IOException {
         int choice = 0;
-        int exitValue = 0;
+        int exitValue = 4;
         Scanner myScan = new Scanner(System.in);
 
         Orderlist orders = new Orderlist();
@@ -21,7 +21,7 @@ public class Controller {
             choice = myScan.nextInt();
             switch (choice) {
                 case 1:
-                    MainMenuUI.showMainMenu();
+                    MenuUI.viewMenu(menu);
                     break;
                 case 2:
                     MenuUI.viewSubMenu();

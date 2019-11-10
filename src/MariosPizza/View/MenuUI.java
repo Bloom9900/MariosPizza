@@ -6,11 +6,12 @@ import MariosPizza.Model.Pizza;
 public class MenuUI {
     public static void viewMenu(Menu menuList) {
         String message = "";
-        for (Pizza p : menuList.getMovieList()) {
+        for (Pizza p : menuList.getMenuList()) {
             message += p.getPizzaNr();
             message += p.getNavn();
             message += p.getTopping();
             message += p.getPris();
+            System.out.println(p);
         }
     }
     

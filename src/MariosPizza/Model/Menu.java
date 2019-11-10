@@ -8,7 +8,7 @@ public class Menu {
 
     public ArrayList<Pizza> menu = new ArrayList();
     
-    public ArrayList<Pizza> getMovieList() {
+    public ArrayList<Pizza> getMenuList() {
         return menu;
     }
 
