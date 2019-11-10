@@ -19,6 +19,9 @@ public class Order {
     public Order() {
         this.orderID = IDFactory.getID();
     }
+    
+    public Order(int orderID, String kundeNavn, int antal) {
+    }
 
     public int getOrderID() {
         return orderID;
@@ -78,13 +81,13 @@ public class Order {
 
     public void userDialogue(Menu menu) {
         Scanner myScan = new Scanner(System.in);
-        System.out.println("Type costumer name: ");
+        System.out.println("Indtast kundenavn: ");
         kundeNavn = myScan.nextLine();
-        System.out.println("Type amount of pizzas: ");
+        System.out.println("Indtast antal pizzaer: ");
         antal = myScan.nextInt();
         myScan.nextLine();
         for (int i = 0; i < antal; i++) {
-            System.out.println("Type pizzas number");
+            System.out.println("Indtast pizza nummer");
             pizzaNr = myScan.nextInt();
             pizzas.add(menu.menu.get(pizzaNr - 1));
         }
