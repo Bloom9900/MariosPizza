@@ -1,4 +1,4 @@
-package Controllers;
+package MariosPizza.Controllers;
 
 import MariosPizza.Main.Main;
 import MariosPizza.Model.*;
