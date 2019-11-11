@@ -9,7 +9,7 @@ public class MenuUI {
         for (Pizza p : menuList.getMenuList()) {
             message += p.getPizzaNr();
             message += p.getNavn();
-            message += p.getTopping1();
+            message += p.getTopping();
             message += p.getPris();
             System.out.println(p);
         }

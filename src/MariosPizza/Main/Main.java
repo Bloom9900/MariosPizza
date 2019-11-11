@@ -18,7 +18,7 @@ public class Main {
 		Menu menu = new Menu();
 		
 		String filename = "Data/ActiveOrders";
-		/*
+		
 		Pizza vesuvio = new Pizza("Vesuvio", 57, 1, "tomatsauce, ost, skinke og oregano");
 		Pizza amerikaner = new Pizza("Amerikaner", 53, 2, "tomatsauce, ost, oksefars og oregano");
 		Pizza cacciatore = new Pizza("Cacciatore", 63, 3, "tomatsauce, ost, pepperoni og oregano");
@@ -48,8 +48,8 @@ public class Main {
 		menu.tilføjPizza(leBlissola);
 		menu.tilføjPizza(venezia);
 		menu.tilføjPizza(mafia);
-                */
-                Controller.runProgram();
+                
+                Controller.runProgram(menu);
 	}
 	
 }

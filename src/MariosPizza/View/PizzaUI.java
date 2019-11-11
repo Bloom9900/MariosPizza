@@ -13,9 +13,10 @@ import MariosPizza.Model.Pizza;
  * @author angry
  */
 public class PizzaUI {
-    public static void viewPizzaList(MainPizzaList pizzaList) { 
-		for (Pizza m : pizzaList.getPizzaList()) {
-			System.out.println("nr: "+ m.getPizzaNr()+" " + m.getNavn() +" "+ m.getTopping1()+" "+ m.getTopping2()+" "+ m.getTopping3()+" "+ m.getTopping4()+" "+ m.getTopping5()+" "+ m.getTopping6()+" "+ m.getTopping7()+" "+ m.getPris());
-		}
-}
+
+    public static void viewPizzaList(MainPizzaList pizzaList) {
+        for (Pizza m : pizzaList.getPizzaList()) {
+            System.out.println("nr: " + m.getPizzaNr() + " " + m.getNavn() + " " + m.getTopping()+ " " + m.getPris());
+        }
+    }
 }

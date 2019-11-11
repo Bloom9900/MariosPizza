@@ -40,16 +40,11 @@ public class PizzaMapper {
             String pizza_name = resultSet.getString("Pizza_name");
             int pizza_nr = resultSet.getInt("pizza_nr");
             int pris = resultSet.getInt("pris");
-            String topping1 = resultSet.getString("Topping1");
-            String topping2 = resultSet.getString("Topping2");
-            String topping3 = resultSet.getString("Topping3");
-            String topping4 = resultSet.getString("Topping4");
-            String topping5 = resultSet.getString("Topping5");
-            String topping6 = resultSet.getString("Topping6");
-            String topping7 = resultSet.getString("Topping7");
+            String topping = resultSet.getString("Topping");
+           
            // String topping1 = resultSet.getString("Topping1");
            // int movie_id = resultSet.getInt("movie_id");
-            Pizza tmpPizza = new Pizza(pizza_name,pris,pizza_nr,topping1,topping2,topping3,topping4,topping5,topping6,topping7);
+            Pizza tmpPizza = new Pizza(pizza_name,pris,pizza_nr,topping);
             returnList.add(tmpPizza);
         }
 

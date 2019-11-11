@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 public class Controller {
 
-    public static void runProgram(/*Menu menu*/) throws IOException, ClassNotFoundException, SQLException {
+    public static void runProgram(Menu menu) throws IOException, ClassNotFoundException, SQLException {
         int choice = 0;
         int exitValue = 4;
         Scanner myScan = new Scanner(System.in);
