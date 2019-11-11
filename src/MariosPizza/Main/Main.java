@@ -1,7 +1,7 @@
 package MariosPizza.Main;
 
 //@Artem
-import Controllers.Controller;
+import MariosPizza.Controllers.Controller;
 import MariosPizza.Model.Orderlist;
 import MariosPizza.Model.Menu;
 import MariosPizza.Model.Pizza;
