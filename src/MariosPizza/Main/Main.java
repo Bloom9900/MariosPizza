@@ -1,22 +1,24 @@
 package MariosPizza.Main;
 
 //@Artem
-import Controllers.Controller;
+import MariosPizza.Controllers.Controller;
 import MariosPizza.Model.Orderlist;
 import MariosPizza.Model.Menu;
 import MariosPizza.Model.Pizza;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
 public class Main {
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException {
 		Menu menu = new Menu();
 		
 		String filename = "Data/ActiveOrders";
-		
+		/*
 		Pizza vesuvio = new Pizza("Vesuvio", 57, 1, "tomatsauce, ost, skinke og oregano");
 		Pizza amerikaner = new Pizza("Amerikaner", 53, 2, "tomatsauce, ost, oksefars og oregano");
 		Pizza cacciatore = new Pizza("Cacciatore", 63, 3, "tomatsauce, ost, pepperoni og oregano");
@@ -46,8 +48,8 @@ public class Main {
 		menu.tilføjPizza(leBlissola);
 		menu.tilføjPizza(venezia);
 		menu.tilføjPizza(mafia);
-                
-                Controller.runProgram(menu);
+                */
+                Controller.runProgram();
 	}
 	
 }

@@ -4,15 +4,18 @@ import MariosPizza.Main.Main;
 import MariosPizza.Model.*;
 import MariosPizza.View.MainMenuUI;
 import MariosPizza.View.MenuUI;
+import MariosPizza.View.PizzaUI;
 import java.io.IOException;
 import java.util.Scanner;
+import java.sql.SQLException;
 
 public class Controller {
 
-    public static void runProgram(Menu menu) throws IOException {
+    public static void runProgram(/*Menu menu*/) throws IOException, ClassNotFoundException, SQLException {
         int choice = 0;
         int exitValue = 4;
         Scanner myScan = new Scanner(System.in);
+        MainPizzaList myList = new MainPizzaList();
 
         Orderlist orders = new Orderlist();
 
@@ -21,13 +24,14 @@ public class Controller {
             choice = myScan.nextInt();
             switch (choice) {
                 case 1:
-                    MenuUI.viewMenu(menu);
+                    //MenuUI.viewMenu(menu);
+                    PizzaUI.viewPizzaList(myList);
                     break;
                 case 2:
                     MenuUI.viewSubMenu();
                     int svar = myScan.nextInt();
                     if (svar == 1) {
-                        orders.makeOrder(menu);
+                      //  orders.makeOrder(menu);
                     }
                     if (svar == 2) {
                         System.out.println(orders.toStringView());
