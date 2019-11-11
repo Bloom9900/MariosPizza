@@ -25,7 +25,17 @@ DROP TABLE IF EXISTS `pizzamenu`;
 CREATE TABLE `pizzamenu` (
   `Pizza_Nr` int(11) DEFAULT NULL,
   `Pizza_name` varchar(225) DEFAULT NULL,
+<<<<<<< HEAD
   `Topping` varchar(255) DEFAULT NULL,
+=======
+  `Topping1` varchar(255) DEFAULT NULL,
+  `Topping2` varchar(225) DEFAULT NULL,
+  `Topping3` varchar(225) DEFAULT NULL,
+  `Topping4` varchar(225) DEFAULT NULL,
+  `Topping5` varchar(225) DEFAULT NULL,
+  `Topping6` varchar(225) DEFAULT NULL,
+  `Topping7` varchar(225) DEFAULT NULL,
+>>>>>>> 08f7b775ae78364a5a6567126a39a11ce7a2f803
   `Pris` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -49,4 +59,8 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+<<<<<<< HEAD
 -- Dump completed on 2019-11-11 11:32:31
+=======
+-- Dump completed on 2019-11-11 11:07:21
+>>>>>>> 08f7b775ae78364a5a6567126a39a11ce7a2f803
