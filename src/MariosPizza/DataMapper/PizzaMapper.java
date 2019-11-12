@@ -36,6 +36,7 @@ public class PizzaMapper {
         String query = "SELECT * FROM pizzamenu";
         statement = myConnector.createStatement();
         resultSet = statement.executeQuery(query);
+        
         while (resultSet.next()){
             String pizza_name = resultSet.getString("Pizza_name");
             int pizza_nr = resultSet.getInt("pizza_nr");

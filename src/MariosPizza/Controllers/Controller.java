@@ -31,7 +31,7 @@ public class Controller {
                     MenuUI.viewSubMenu();
                     int svar = myScan.nextInt();
                     if (svar == 1) {
-                      //  orders.makeOrder(menu);
+                        orders.makeOrder(menu);
                     }
                     if (svar == 2) {
                         System.out.println(orders.toStringView());

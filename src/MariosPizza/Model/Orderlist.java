@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -21,7 +22,7 @@ public class Orderlist {
         this.orderNum = IDFactory.getID();
     }
 //
-    public void makeOrder(Menu menu) throws IOException {
+    public void makeOrder(Menu menu) throws IOException, ClassNotFoundException, SQLException {
         Order odr = new Order();
         odr.userDialogue(menu);
         olist.add(odr);
