@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public class Controller {
 
-    public static void runProgram(Menu menu) throws IOException, ClassNotFoundException, SQLException {
+    public void runProgram(Menu menu) throws IOException, ClassNotFoundException, SQLException {
         int choice = 0;
         int exitValue = 4;
         Scanner myScan = new Scanner(System.in);
@@ -51,5 +51,21 @@ public class Controller {
 
             }
         }
+    }
+    
+    public void userDialogue(Menu menu) {
+        Scanner myScan = new Scanner(System.in);
+        System.out.println("Indtast kundenavn: ");
+        String kundeNavn = myScan.nextLine();
+        System.out.println("Indtast antal pizzaer: ");
+        int antal = myScan.nextInt();
+        myScan.nextLine();
+        for (int i = 0; i < antal; i++) {
+            System.out.println("Indtast pizza nummer");
+            int pizzaNr = myScan.nextInt();
+
+            pizzas.add(menu.menu.get(pizzaNr - 1));
+        }
+        DBAddPizza();
     }
 }
