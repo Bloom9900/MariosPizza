@@ -16,6 +16,7 @@ public class Main {
 	
 	public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException {
 		Menu menu = new Menu();
+                
 		
 		String filename = "Data/ActiveOrders";
 		
@@ -49,7 +50,8 @@ public class Main {
 		menu.tilføjPizza(venezia);
 		menu.tilføjPizza(mafia);
                 
-                Controller.runProgram(menu);
+                Controller ctr = new Controller();
+                ctr.runProgram(menu);
 	}
 	
 }

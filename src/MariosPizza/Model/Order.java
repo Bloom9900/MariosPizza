@@ -1,13 +1,15 @@
 package MariosPizza.Model;
 
 //@Jannich
+import MariosPizza.DataMapper.DBMapper;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 import java.sql.*;
-
+import MariosPizza.Model.Pizza;
+import MariosPizza.DataMapper.DBMapper;
 public class Order {
     
     private ArrayList<Pizza> pizzas = new ArrayList<>();
@@ -15,15 +17,18 @@ public class Order {
     private int antal;
     private int pizzaNr;
     private int orderID;
-    private int pris;
+    
     private final Date creationDate = new Date();
     
     public Date getOrderDate() {
         return creationDate;
     }
+    //Pizza tmpPizza = new Pizza();
     
     public Order() {
         this.orderID = IDFactory.getID();
+        
+        
     }
     
     public Order(int orderID, String kundeNavn, int antal) {
@@ -68,6 +73,13 @@ public class Order {
         }
         return totalPris;
     }
+    public int getPris() {
+        int Pris = 0;
+        for (Pizza pizza : pizzas) {
+            Pris = pizza.getPris();
+        }
+        return Pris;
+    }
 
 	@Override
 	public String toString() {
@@ -86,6 +98,7 @@ public class Order {
     
 
     public void userDialogue(Menu menu) {
+        DBMapper mapper = new DBMapper();
         Scanner myScan = new Scanner(System.in);
         System.out.println("Indtast kundenavn: ");
         kundeNavn = myScan.nextLine();
@@ -95,9 +108,9 @@ public class Order {
         for (int i = 0; i < antal; i++) {
             System.out.println("Indtast pizza nummer");
             pizzaNr = myScan.nextInt();
-            
             pizzas.add(menu.menu.get(pizzaNr - 1));
-            DBAddPizza();
+            mapper.DBAddPizza(this);
+            
         }
     }
     
@@ -111,39 +124,12 @@ public class Order {
         
         return message + "\n"+"\n";
     }
-    public  void DBAddPizza(){
-        try{
-            String Customer_name = this.kundeNavn;
-            int Order_ID = this.orderID;
-            int Pizza = this.pizzaNr;
-            
-            Class.forName("com.mysql.cj.jdbc.Driver");
-   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MariosPizza?", "root", "password");
-   PreparedStatement pst = con.prepareStatement("insert into ordre(Order_ID,Customer_name,Pizza) values(?,?,?)");
- 
-      pst.setInt(1,Order_ID);
-      pst.setString(2, Customer_name);
-      pst.setInt(3, Pizza);
-     // pst.setInt(4, pris);
-        
-      int i = pst.executeUpdate();
-      if(i!=0){
-        System.out.println("added");
-      }
-      else{
-        System.out.println("failed to add");
-      }
-    }
-    catch (Exception e){
-     System.out.println(e);
-    }
-  }
+   
 
-    private void pris(Pizza get) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
     }
             
             
-        }
+        
     
 

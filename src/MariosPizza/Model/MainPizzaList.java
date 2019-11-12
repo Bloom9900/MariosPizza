@@ -5,7 +5,7 @@
  */
 package MariosPizza.Model;
 
-import MariosPizza.DataMapper.PizzaMapper;
+import MariosPizza.DataMapper.DBMapper;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -26,7 +26,8 @@ public class MainPizzaList {
         
     }
     public void fillListFromDB() throws ClassNotFoundException, SQLException{
-        pizzas= PizzaMapper.pizzaList();
+        DBMapper mapper = new DBMapper();
+        pizzas = mapper.pizzaList();
     }
     public void filllistFromFile(){
             pizzas = null;

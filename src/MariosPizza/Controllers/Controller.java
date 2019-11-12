@@ -7,10 +7,11 @@ import MariosPizza.View.PizzaUI;
 import java.io.IOException;
 import java.util.Scanner;
 import java.sql.SQLException;
+import MariosPizza.DataMapper.DBMapper;
 
 public class Controller {
 
-    public static void runProgram(Menu menu) throws IOException, ClassNotFoundException, SQLException {
+    public void runProgram(Menu menu) throws IOException, ClassNotFoundException, SQLException {
         int choice = 0;
         int exitValue = 4;
         Scanner myScan = new Scanner(System.in);
@@ -31,6 +32,8 @@ public class Controller {
                     int svar = myScan.nextInt();
                     if (svar == 1) {
                         orders.makeOrder(menu);
+                        
+                        
                     }
                     if (svar == 2) {
                         System.out.println(orders.toStringView());
@@ -52,4 +55,6 @@ public class Controller {
             }
         }
     }
+
+   
 }
