@@ -34,7 +34,7 @@ public class Main {
 		Pizza venezia = new Pizza("Venezia", 61, 13, "tomatsauce, ost, skinke, bacon og oregano");
 		Pizza mafia = new Pizza("Mafia", 61, 14, "tomatsauce, ost, pepperoni, bacon, løg og oregano");
 		
-		menu.tilføjPizza(vesuvio);
+		menu.tilføjPizza(vesuvio); 
 		menu.tilføjPizza(amerikaner);
 		menu.tilføjPizza(cacciatore);
 		menu.tilføjPizza(carbona);
