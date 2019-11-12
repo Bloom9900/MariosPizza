@@ -21,13 +21,8 @@ public class Orderlist {
     public Orderlist() {
         this.orderNum = IDFactory.getID();
     }
-<<<<<<< HEAD
-
-    public void makeOrder(Menu menu) throws IOException {
-=======
 //
     public void makeOrder(Menu menu) throws IOException, ClassNotFoundException, SQLException {
->>>>>>> 53bb48597e497185fd9a440e02ec65becc160b74
         Order odr = new Order();
         odr.userDialogue(menu);
         olist.add(odr);
@@ -97,7 +92,9 @@ public class Orderlist {
     public String toStringView() {
         String view = "";
         for (Order order : olist) {
+            order.getOrderDate();
             view += order.getOrderID() + ";";
+            view += order.getOrderDate() + ": ";
             view += order.getKundeNavn() + ";";
             view += order.getPizzas() + ";";
             view += order.getTotalPris();

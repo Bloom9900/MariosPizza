@@ -12,7 +12,6 @@ public class DBConnector {
         String user = "root";
         String password = "password";
         Class.forName("com.mysql.cj.jdbc.Driver");
-        System.out.println("Connecting to Database...");
         connector = DriverManager.getConnection(url, user, password);
 
         return connector;

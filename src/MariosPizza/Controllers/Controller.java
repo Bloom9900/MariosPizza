@@ -3,7 +3,6 @@ package MariosPizza.Controllers;
 import MariosPizza.Main.Main;
 import MariosPizza.Model.*;
 import MariosPizza.View.MainMenuUI;
-import MariosPizza.View.MenuUI;
 import MariosPizza.View.PizzaUI;
 import java.io.IOException;
 import java.util.Scanner;
@@ -24,11 +23,11 @@ public class Controller {
             choice = myScan.nextInt();
             switch (choice) {
                 case 1:
-                    //MenuUI.viewMenu(menu);
-                    PizzaUI.viewPizzaList(myList);
+                    PizzaUI pizzaUI = new PizzaUI();
+                    pizzaUI.viewPizzaList(myList);
                     break;
                 case 2:
-                    MenuUI.viewSubMenu();
+                    MainMenuUI.viewSubMenu();
                     int svar = myScan.nextInt();
                     if (svar == 1) {
                         orders.makeOrder(menu);

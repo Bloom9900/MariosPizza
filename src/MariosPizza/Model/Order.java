@@ -1,11 +1,10 @@
 package MariosPizza.Model;
 
 //@Jannich
-import MariosPizza.Model.IDFactory;
-import MariosPizza.Model.Menu;
-import MariosPizza.Model.Pizza;
+import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Order {
@@ -15,7 +14,12 @@ public class Order {
     private int antal;
     private int pizzaNr;
     private int orderID;
-
+    private final Date creationDate = new Date();
+    
+    public Date getOrderDate() {
+        return creationDate;
+    }
+    
     public Order() {
         this.orderID = IDFactory.getID();
     }
