@@ -7,18 +7,29 @@ import MariosPizza.Model.Pizza;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.sql.*;
 
 public class Order {
-
+    
     private ArrayList<Pizza> pizzas = new ArrayList<>();
     private String kundeNavn;
     private int antal;
     private int pizzaNr;
     private int orderID;
+    private int pris;
 
     public Order() {
         this.orderID = IDFactory.getID();
     }
+
+    public int getPris() {
+        return pris;
+    }
+
+    public void setPris(int pris) {
+        this.pris = pris;
+    }
+    
     
     public Order(int orderID, String kundeNavn, int antal) {
     }
@@ -89,7 +100,9 @@ public class Order {
         for (int i = 0; i < antal; i++) {
             System.out.println("Indtast pizza nummer");
             pizzaNr = myScan.nextInt();
+            
             pizzas.add(menu.menu.get(pizzaNr - 1));
+            DBAddPizza();
         }
     }
     
@@ -103,4 +116,39 @@ public class Order {
         
         return message + "\n"+"\n";
     }
-}
+    public  void DBAddPizza(){
+        try{
+            String Customer_name = this.kundeNavn;
+            int Order_ID = this.orderID;
+            int Pizza = this.pizzaNr;
+            
+            Class.forName("com.mysql.jdbc.Driver");
+   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/marriospizza?", "root", "klon3903202");
+   PreparedStatement pst = con.prepareStatement("insert into ordre(Order_ID,Customer_name,Pizza) values(?,?,?)");
+ 
+      pst.setInt(1,Order_ID);
+      pst.setString(2, Customer_name);
+      pst.setInt(3, Pizza);
+     // pst.setInt(4, pris);
+        
+      int i = pst.executeUpdate();
+      if(i!=0){
+        System.out.println("added");
+      }
+      else{
+        System.out.println("failed to add");
+      }
+    }
+    catch (Exception e){
+     System.out.println(e);
+    }
+  }
+
+    private void pris(Pizza get) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+            
+            
+        }
+    
+
