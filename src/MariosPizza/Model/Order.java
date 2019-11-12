@@ -22,10 +22,8 @@ public class Order {
         return creationDate;
     }
     
-    IDFactory fac = new IDFactory();
-    
     public Order() {
-        this.orderID = fac.getID();
+        this.orderID = IDFactory.getID();
     }
     
     public Order(int orderID, String kundeNavn, int antal) {
@@ -119,8 +117,8 @@ public class Order {
             int Order_ID = this.orderID;
             int Pizza = this.pizzaNr;
             
-            Class.forName("com.mysql.jdbc.Driver");
-   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/marriospizza?", "root", "klon3903202");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MariosPizza?", "root", "password");
    PreparedStatement pst = con.prepareStatement("insert into ordre(Order_ID,Customer_name,Pizza) values(?,?,?)");
  
       pst.setInt(1,Order_ID);

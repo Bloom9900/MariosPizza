@@ -7,15 +7,6 @@ public class Pizza {
     private int pris;
     private int pizza_nr;
     private String topping;
-   
-
-   /* public Pizza(String pizza_name, int pris, int pizza_nr, String topping) {
-        this.pizza_name = pizza_name;
-        this.pris = pris;
-        this.pizza_nr = pizza_nr;
-        this.topping = topping;
-        
-    }*/
 
     public Pizza(String pizza_name, int pris, int pizza_nr, String topping) {
         this.pizza_name = pizza_name;
