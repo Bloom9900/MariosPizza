@@ -30,7 +30,7 @@ public class Controller {
                     MainMenuUI.viewSubMenu();
                     int svar = myScan.nextInt();
                     if (svar == 1) {
-                        orders.makeOrder(menu);
+                        makeOrder(menu);
                     }
                     if (svar == 2) {
                         System.out.println(orders.toStringView());
@@ -53,7 +53,7 @@ public class Controller {
         }
     }
     
-    public void userDialogue(Menu menu) {
+    public void makeOrder(Menu menu) {
         Scanner myScan = new Scanner(System.in);
         System.out.println("Indtast kundenavn: ");
         String kundeNavn = myScan.nextLine();
@@ -63,8 +63,6 @@ public class Controller {
         for (int i = 0; i < antal; i++) {
             System.out.println("Indtast pizza nummer");
             int pizzaNr = myScan.nextInt();
-
-            pizzas.add(menu.menu.get(pizzaNr - 1));
         }
         DBAddPizza();
     }

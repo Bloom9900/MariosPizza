@@ -24,53 +24,47 @@ public class Orderlist {
         this.orderNum = IDFactory.getID();
     }
 
-    //ryk til controller klasse
-    public void makeOrder(Menu menu) throws IOException, ClassNotFoundException, SQLException {
-        ct.userDialogue(menu);
-        olist.add(ct);
-        //writeOrderToFile(filename, ct);
-    }
-
-    // order remover, remove order from file / ryk til controller klasse
-    public void removeOrder(int ordreId) throws IOException {
-        Order markedForArchive = null;
-        for (Order o : olist) {
-            if (o.getOrderID() == ordreId) {
-                markedForArchive = o;
-            }
-        }
-        olist.remove(olist.indexOf(markedForArchive));
-    }
-
-    public void viewOrders(Order odr) {
-        System.out.println(olist);
-    }
-
-    @Override
-    public String toString() {
-        String message = "";
-        for (Order order : olist) {
-            message += "\n" + "Order nr: " + order.getOrderID() + ":" + "\n" + "Kunde: " + order.getKundeNavn() + "\n";
-            for (Pizza pizza : order.getPizzas()) {
-                message += pizza.getNavn() + ";";
-                message += "\n";
-            }
-        }
-        return message + "\n" + "________________" + "\n";
-    }
-
-    public String toStringView() {
-        String view = "";
-        for (Order order : olist) {
-            order.getOrderDate();
-            view += order.getOrderID() + ";";
-            view += order.getOrderDate() + ": ";
-            view += order.getKundeNavn() + ";";
-            view += order.getPizzas() + ";";
-            view += order.getTotalPris();
-            view += "\n";
-        }
-        return view;
-    }
-
+    ct.
+    
+//    // order remover, remove order from file / ryk til controller klasse
+//    public void removeOrder(int ordreId) throws IOException {
+//        Order markedForArchive = null;
+//        for (Order o : olist) {
+//            if (o.getOrderID() == ordreId) {
+//                markedForArchive = o;
+//            }
+//        }
+//        olist.remove(olist.indexOf(markedForArchive));
+//    }
+//
+//    public void viewOrders(Order odr) {
+//        System.out.println(olist);
+//    }
+//
+//    @Override
+//    public String toString() {
+//        String message = "";
+//        for (Order order : olist) {
+//            message += "\n" + "Order nr: " + order.getOrderID() + ":" + "\n" + "Kunde: " + order.getKundeNavn() + "\n";
+//            for (Pizza pizza : order.getPizzas()) {
+//                message += pizza.getNavn() + ";";
+//                message += "\n";
+//            }
+//        }
+//        return message + "\n" + "________________" + "\n";
+//    }
+//
+//    public String toStringView() {
+//        String view = "";
+//        for (Order order : olist) {
+//            order.getOrderDate();
+//            view += order.getOrderID() + ";";
+//            view += order.getOrderDate() + ": ";
+//            view += order.getKundeNavn() + ";";
+//            view += order.getPizzas() + ";";
+//            view += order.getTotalPris();
+//            view += "\n";
+//        }
+//        return view;
+//    }
 }
