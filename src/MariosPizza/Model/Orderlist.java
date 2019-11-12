@@ -20,7 +20,7 @@ public class Orderlist {
     public Orderlist() {
         this.orderNum = IDFactory.getID();
     }
-//
+
     public void makeOrder(Menu menu) throws IOException {
         Order odr = new Order();
         odr.userDialogue(menu);
