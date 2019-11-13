@@ -36,7 +36,7 @@ public class Controller {
                         
                         
 
-                        makeOrder(menu);
+                       // makeOrder(menu);
 
                     }
                     if (svar == 2) {
@@ -44,6 +44,7 @@ public class Controller {
                         System.out.println("Tast nr på ordre der skal slettes (overføres til arkiv)");
                         int id = myScan.nextInt();
                         orders.removeOrder(id);
+                        
                     }
                     if (svar == 3) {
                         System.out.println(orders.toStringView());

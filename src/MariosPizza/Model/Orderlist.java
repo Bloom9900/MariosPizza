@@ -24,7 +24,7 @@ public class Orderlist {
         this.orderNum = IDFactory.getID();
     }
 
-    ct.
+    
     
 //    // order remover, remove order from file / ryk til controller klasse
 //    public void removeOrder(int ordreId) throws IOException {
