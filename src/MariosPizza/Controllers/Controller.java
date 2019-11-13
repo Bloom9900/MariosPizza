@@ -68,7 +68,7 @@ public class Controller {
 
 
     
-    public void makeOrder(Menu menu) {
+ /*   public void makeOrder(Menu menu) {
         Scanner myScan = new Scanner(System.in);
         System.out.println("Indtast kundenavn: ");
         String kundeNavn = myScan.nextLine();
@@ -81,5 +81,5 @@ public class Controller {
         }
        // DBAddPizza();
     }
-
+*/
 }

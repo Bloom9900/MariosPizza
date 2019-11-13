@@ -1,6 +1,6 @@
 package MariosPizza.View;
 
-import MariosPizza.Model.Menu;
+
 import MariosPizza.Model.MainPizzaList;
 import MariosPizza.Model.Pizza;
 
