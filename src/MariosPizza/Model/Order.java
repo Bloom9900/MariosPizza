@@ -11,27 +11,26 @@ import java.sql.*;
 import MariosPizza.Model.Pizza;
 import MariosPizza.DataMapper.DBMapper;
 public class Order {
-    
+
     private ArrayList<Pizza> pizzas = new ArrayList<>();
     private String kundeNavn;
     private int antal;
     private int pizzaNr;
     private int orderID;
-    
+
     private final Date creationDate = new Date();
-    
+
     public Date getOrderDate() {
         return creationDate;
     }
-    //Pizza tmpPizza = new Pizza();
-    
+
     public Order() {
         this.orderID = IDFactory.getID();
         
         
     }
-    
-    public Order(int orderID, String kundeNavn, int antal) {
+
+    public Order(int orderID, String kundeNavn, String topping, int antal) {
     }
 
     public int getOrderID() {
@@ -65,7 +64,7 @@ public class Order {
     public ArrayList<Pizza> getPizzas() {
         return pizzas;
     }
-    
+
     public int getTotalPris() {
         int totalPris = 0;
         for (Pizza pizza : pizzas) {
@@ -80,6 +79,7 @@ public class Order {
         }
         return Pris;
     }
+
 
 	@Override
 	public String toString() {
@@ -99,6 +99,7 @@ public class Order {
 
     public void userDialogue(Menu menu) {
         DBMapper mapper = new DBMapper();
+        
         Scanner myScan = new Scanner(System.in);
         System.out.println("Indtast kundenavn: ");
         kundeNavn = myScan.nextLine();
@@ -114,16 +115,18 @@ public class Order {
         }
     }
     
+
     public String listView() {
         String message = "";
-            message +="\n"+ "Order nr: "+ this.orderID +":"+"\n" + "Kunde: "+ this.kundeNavn+"\n";
-            for (Pizza pizza : this.pizzas) {
-                message += pizza.getNavn() + ";";
-                message += "\n";
-            }
-        
-        return message + "\n"+"\n";
+        message += "\n" + "Order nr: " + this.orderID + ":" + "\n" + "Kunde: " + this.kundeNavn + "\n";
+        for (Pizza pizza : this.pizzas) {
+            message += pizza.getNavn() + ";";
+            message += "\n";
+        }
+
+        return message + "\n" + "\n";
     }
+
    
 
     

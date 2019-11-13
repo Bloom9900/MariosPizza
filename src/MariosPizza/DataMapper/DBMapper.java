@@ -92,8 +92,8 @@ public class DBMapper {
     
     
     
-    //order mapper setter den ind i databassen
-     /*
+    //henter pizzaer fra dabassen
+     
     public static ArrayList<Order> orderList() throws ClassNotFoundException, SQLException {
         ArrayList<Order> returnList = new ArrayList<>();
 
@@ -107,7 +107,7 @@ public class DBMapper {
         statement = myConnector.createStatement();
         resultSet = statement.executeQuery(query);
         while (resultSet.next()) {
-            int ordre_nummer = resultSet.getInt("ordre_nummer");
+            int ordre_nummer = resultSet.getInt("");
             String kundenavn = resultSet.getString("kundenavn");
             int antal = resultSet.getInt("antal");
             Order tmpOrder = new Order(ordre_nummer, kundenavn, antal);
@@ -120,13 +120,13 @@ public class DBMapper {
         myConnector.close();
 
         return returnList;
-}*/
+}
+   
     
     
     
     
-    
-    
+    /*
     //trækker ordren ud af databassen ind i programmet
      public static Order getOrderFromDBByID(int id) throws ClassNotFoundException, SQLException {
         Order retValOrder = null;
@@ -154,7 +154,7 @@ public class DBMapper {
         myConnector.close();
         
         return retValOrder;
-    }
+    }*/
     
     
     

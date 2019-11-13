@@ -48,8 +48,6 @@ public class Pizza {
         this.topping = topping;
     }
 
-  
-
     @Override
     public String toString() {
 	    String  msg= "";

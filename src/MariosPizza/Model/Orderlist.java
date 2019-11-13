@@ -1,8 +1,8 @@
 package MariosPizza.Model;
 
 //@Jannich
-import MariosPizza.Model.Menu;
-import MariosPizza.Model.Pizza;
+import MariosPizza.Model.*;
+import MariosPizza.Controllers.Controller;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,50 +12,27 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class Orderlist {
 
     private final static String filename = "Data/ActiveOrders";
     private ArrayList<Order> olist = new ArrayList<>();
     private int orderNum;
 
+    Controller ct = new Controller();
+
     public Orderlist() {
         this.orderNum = IDFactory.getID();
     }
-//
+
+    //ryk til controller klasse
     public void makeOrder(Menu menu) throws IOException, ClassNotFoundException, SQLException {
         Order odr = new Order();
         odr.userDialogue(menu);
         olist.add(odr);
-        writeOrderToFile(filename, odr);
-    }
-// filewriter til programmet
-    public void writeToFile(String filename) throws IOException {
-        File file = new File(filename);
-        FileWriter fw = new FileWriter(file, true);
-        BufferedWriter bw = new BufferedWriter(fw);
-        bw.write(this.toString());
-        bw.close();
+        //writeOrderToFile(filename, ct);
     }
 
-// file writer til fil 
-    public void writeOrderToFile(String filename, Order odr) throws IOException {
-        File file = new File(filename);
-        FileWriter fw = new FileWriter(file, true);
-        BufferedWriter bw = new BufferedWriter(fw);
-        bw.write(odr.listView());
-        bw.close();
-    }
-
-    public void getActiveOrdersFrom(String filename) throws FileNotFoundException {
-        File fhActj = new File(filename);
-        Scanner myScanner = new Scanner(fhActj);
-        while (myScanner.hasNextLine()) {
-            String line = myScanner.nextLine();
-        }
-    }
-
-    // order remover, remove order from file
+    // order remover, remove order from file / ryk til controller klasse
     public void removeOrder(int ordreId) throws IOException {
         Order markedForArchive = null;
         for (Order o : olist) {
@@ -64,13 +41,6 @@ public class Orderlist {
             }
         }
         olist.remove(olist.indexOf(markedForArchive));
-
-        File fhArk = new File("Data/AllOrders");
-        FileWriter fwArk = new FileWriter(fhArk, true);
-        BufferedWriter bwArk = new BufferedWriter(fwArk);
-        bwArk.write(markedForArchive.toString());
-        bwArk.newLine();
-        bwArk.close();
     }
 
     public void viewOrders(Order odr) {

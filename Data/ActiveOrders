@@ -47,6 +47,7 @@ Amerikaner;
 
 
 Order nr: 1:
+<<<<<<< HEAD
 Kunde: Artem
 Vesuvio;
 Cacciatore;
@@ -92,10 +93,15 @@ Bertil;
 Silvia;
 Victoria;
 Toronfo;
+=======
+Kunde: Jannich
+Dennis;
+>>>>>>> 965ceb6dfd8587bd1f5f51c264411e6ebb32a41e
 
 
 
 Order nr: 1:
+<<<<<<< HEAD
 Kunde: Artem
 Vesuvio;
 Amerikaner;
@@ -166,10 +172,27 @@ Order nr: 1:
 Kunde: Artem
 Vesuvio;
 Amerikaner;
+=======
+Kunde: Jannich
+Cacciatore;
+
+
+
+Order nr: 2:
+Kunde: Jannich
+Vesuvio;
+
+
+
+Order nr: 3:
+Kunde: Jannich
+Dennis;
+>>>>>>> 965ceb6dfd8587bd1f5f51c264411e6ebb32a41e
 
 
 
 Order nr: 1:
+<<<<<<< HEAD
 Kunde: Artem
 Vesuvio;
 Amerikaner;
@@ -180,11 +203,16 @@ Order nr: 1:
 Kunde: Artem
 Vesuvio;
 Cacciatore;
+=======
+Kunde: Jannich
+Vesuvio;
+>>>>>>> 965ceb6dfd8587bd1f5f51c264411e6ebb32a41e
 
 
 
 Order nr: 1:
 Kunde: Artem
+<<<<<<< HEAD
 Silvia;
 Bertil;
 
@@ -205,5 +233,10 @@ Order nr: 1:
 Kunde: Jannich
 Dennis;
 Carbona;
+=======
+Carbona;
+Dennis;
+Bertil;
+>>>>>>> 965ceb6dfd8587bd1f5f51c264411e6ebb32a41e
 
 

@@ -49,9 +49,11 @@ public class Main {
 		menu.tilføjPizza(leBlissola);
 		menu.tilføjPizza(venezia);
 		menu.tilføjPizza(mafia);
+
                 
                 Controller ctr = new Controller();
                 ctr.runProgram(menu);
+
 	}
 	
 }
