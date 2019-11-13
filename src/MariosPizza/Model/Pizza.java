@@ -51,9 +51,9 @@ public class Pizza {
     @Override
     public String toString() {
 	    String  msg= "";
-	    msg+=pizza_nr + ":";
-	    msg+=pizza_name + ":";
-	    msg+=topping + ":";
+	    msg+=pizza_nr + ". ";
+	    msg+=pizza_name + ": ";
+	    msg+=topping + ". Pris: ";
 	    msg+=pris;
 	    return msg;
     }
