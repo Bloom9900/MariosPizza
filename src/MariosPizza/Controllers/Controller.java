@@ -11,7 +11,7 @@ import MariosPizza.DataMapper.DBMapper;
 
 public class Controller {
 
-    public void runProgram(Menu menu) throws IOException, ClassNotFoundException, SQLException {
+    public void runProgram(MainPizzaList pizzass) throws IOException, ClassNotFoundException, SQLException {
         int choice = 0;
         int exitValue = 4;
         Scanner myScan = new Scanner(System.in);
@@ -31,8 +31,9 @@ public class Controller {
                     MainMenuUI.viewSubMenu();
                     int svar = myScan.nextInt();
                     if (svar == 1) {
-
-                        orders.makeOrder(menu);
+                        DBMapper db = new DBMapper();
+                        orders.makeOrder(pizzass);
+                        
                         
                         
 

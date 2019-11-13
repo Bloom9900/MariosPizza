@@ -16,6 +16,7 @@ import MariosPizza.Model.Pizza;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import MariosPizza.Model.Order;
+import java.util.Scanner;
 
 /**
  *
@@ -91,36 +92,47 @@ public class DBMapper {
     
     
     
-    
+    ArrayList pizzaInf;
+
+    public ArrayList getPizzaInf() {
+        return pizzaInf;
+    }
     //henter pizzaer fra dabassen
-     
-    public static ArrayList<Order> orderList() throws ClassNotFoundException, SQLException {
-        ArrayList<Order> returnList = new ArrayList<>();
+     public ArrayList DBGetPizza() throws SQLException{
+           ArrayList pizzaInf = new ArrayList<>();
+      Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/marriospizza?", "root", "klon3903202");
+      Order odr = new Order();
+ 
+   try {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Vælg pizza:");
+            int str = sc.nextInt();
 
-       
-        Connection myConnector = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
-
-        myConnector = DBConnector.getConnector();
-        String query = "SELECT * FROM ordre";
-        statement = myConnector.createStatement();
-        resultSet = statement.executeQuery(query);
-        while (resultSet.next()) {
-            int ordre_nummer = resultSet.getInt("");
-            String kundenavn = resultSet.getString("kundenavn");
-            int antal = resultSet.getInt("antal");
-            Order tmpOrder = new Order(ordre_nummer, kundenavn, antal);
-            returnList.add(tmpOrder);
+            Statement stmt2 = null;
+            String query2 = "SELECT * FROM pizzamenu  WHERE Pizza_nr =" + str + "";
+            stmt2 = con.createStatement();
+            ResultSet result = stmt2.executeQuery(query2);
+            while (result.next()) {
+                int pizza_nr = (int) result.getInt("Pizza_nr");
+                String pizza_name = (String) result.getString("Pizza_name");
+                String topping = (String) result.getString("Topping");
+                int pris = (int) result.getInt("Pris");
+                System.out.println(pizza_nr + pizza_name + topping + pris);
+                
+                 Pizza tmpPizza = new Pizza(pizza_name, pris, pizza_nr, topping);
+                 pizzaInf.add(tmpPizza);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
         }
-
-        //lukker efter mig
-        resultSet.close();
-        statement.close();
-        myConnector.close();
-
-        return returnList;
+        return pizzaInf;
+    }
 }
+   
+      
+    
+     
+
    
     
     
@@ -158,4 +170,4 @@ public class DBMapper {
     
     
     
-}
+

@@ -3,6 +3,7 @@ package MariosPizza.Model;
 //@Jannich
 import MariosPizza.Model.*;
 import MariosPizza.Controllers.Controller;
+import MariosPizza.DataMapper.DBMapper;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -68,9 +69,9 @@ public class Orderlist {
 //        return view;
 //    }
     //ryk til controller klasse
-    public void makeOrder(Menu menu) throws IOException, ClassNotFoundException, SQLException {
+    public void makeOrder(MainPizzaList pizzass) throws IOException, ClassNotFoundException, SQLException {
         Order odr = new Order();
-        odr.userDialogue(menu);
+        odr.userDialogue(pizzass);
         olist.add(odr);
         //writeOrderToFile(filename, ct);
     }

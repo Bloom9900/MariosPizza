@@ -14,22 +14,22 @@ import java.util.ArrayList;
  * @author angry
  */
 public class MainPizzaList {
-    ArrayList<Pizza> pizzas;
+    ArrayList<Pizza> pizzass;
   
     
     public MainPizzaList() throws ClassNotFoundException, SQLException{
-        pizzas = new ArrayList<>();
+        pizzass = new ArrayList<>();
         fillListFromDB();
     }
     public ArrayList<Pizza>getPizzaList(){
-        return pizzas;
+        return pizzass;
         
     }
     public void fillListFromDB() throws ClassNotFoundException, SQLException{
         DBMapper mapper = new DBMapper();
-        pizzas = mapper.pizzaList();
+        pizzass = mapper.pizzaList();
     }
     public void filllistFromFile(){
-            pizzas = null;
+            pizzass = null;
     } 
 }
