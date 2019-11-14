@@ -29,7 +29,11 @@ public class Order {
         
     }
 
-    public Order(int orderID, String kundeNavn, String topping, int antal) {
+    public Order(String kundeNavn, int antal, int pizzaNr, int orderID) {
+        this.kundeNavn = kundeNavn;
+        this.antal = antal;
+        this.pizzaNr = pizzaNr;
+        this.orderID = orderID;
     }
 
     public int getOrderID() {
