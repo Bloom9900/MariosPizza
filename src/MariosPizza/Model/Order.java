@@ -112,7 +112,7 @@ public class Order {
             pizzaNr = mapper.DBAddStat();
             pizzas.add(pizzass.pizzass.get(pizzaNr -  1));
             mapper.DBAddPizza(this);
-            mapper.DBAddOmst();
+           
             
         }
     }

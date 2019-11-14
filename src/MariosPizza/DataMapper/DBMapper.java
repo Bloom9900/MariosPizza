@@ -71,7 +71,7 @@ public class DBMapper {
             int Pris = pizzas.getPris();
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mariospizza?", "root", "password");
+   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/marriospizza?", "root", "klon3903202");
    PreparedStatement pst = con.prepareStatement("insert into ordre(Order_ID,Customer_name,Pizza,Pris) values(?,?,?,?)");
  
      pst.setInt(1,Order_ID);
@@ -90,9 +90,11 @@ public class DBMapper {
     catch (Exception e){
      System.out.println(e);
     }
+    }
 
     // Sætter order ind i databassen
-    public int DBAddStat() {
+    public int DBAddStat(){
+    
 
         Scanner sc = new Scanner(System.in);
         int str = sc.nextInt();
@@ -116,26 +118,49 @@ public class DBMapper {
         return str;
     }
 
-    public void DBAddOmst() {
+    public void DBAddOmst() throws SQLException, ClassNotFoundException {
         
         try {
-            
+          /*  select (p.pris*s.antal) Total, p.pris, s.antal from pizzamenu p, statistik s 
+where p.Pizza_nr = s.Pizza_nr; */
+          
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/marriospizza?", "root", "klon3903202");
-
-            PreparedStatement pst2 = con.prepareStatement("UPDATE statistik SET Omsætning = Omsætning + Omsætning WHERE antal = +1");
+            String query = "SELECT p.Pizza_Nr, p.Pizza_name, p.Topping, s.Antal, p.Pris, (p.pris*s.antal) Omsætning from pizzamenu p, statistik s where p.Pizza_nr = s.Pizza_nr ORDER BY Omsætning DESC;";
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            
+            while(rs.next()){
+               int pizzaNr = rs.getInt("Pizza_Nr");
+               String Pizza_name = rs.getString("Pizza_name");
+               String Topping = rs.getString("Topping");
+               int Pris = rs.getInt("Pris");
+               int Antal = rs.getInt("Antal");
+               int Omsætning = rs.getInt("Omsætning");
+                System.out.println(pizzaNr+" "+Pizza_name+" "+Topping+":    Antal Solgt: "+ Antal+" Pris:"+Pris+" Omsætning: "+Omsætning);
+                
+                
+                
+                
+            }
+            
+// PreparedStatement pst2 = con.prepareStatement("UPDATE statistik SET Omsætning = Omsætning + Omsætning WHERE antal = +1");
             
 
-            int i = pst2.executeUpdate();
+           /* int i = pst2.executeUpdate();
             if (i != 0) {
             } else {
                 System.out.println("failed to add");
-            }
+            }*/
         } catch (Exception e) {
             System.out.println(e);
         }
     }
 }
+
+
+
+
 
     
 

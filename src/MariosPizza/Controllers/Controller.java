@@ -20,6 +20,7 @@ public class Controller {
         Orderlist orders = new Orderlist();
 
         while (choice != exitValue) {
+             DBMapper db = new DBMapper();
             MainMenuUI.showMainMenu();
             choice = myScan.nextInt();
             switch (choice) {
@@ -29,7 +30,7 @@ public class Controller {
                     break;
                 case 2:
                     MainMenuUI.viewSubMenu();
-                    DBMapper db = new DBMapper();
+                   
                     int svar = myScan.nextInt();
                     if (svar == 1) {
                         orders.makeOrder(pizzass);
@@ -47,7 +48,8 @@ public class Controller {
                     }
                     break;
                 case 3:
-                    //To be made
+                    db.DBAddOmst();
+                    
                     break;
                 default:
                     System.out.println("Exit");

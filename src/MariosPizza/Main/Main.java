@@ -17,9 +17,6 @@ public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException {
 
         MainPizzaList pizzass = new MainPizzaList();
-
-        String filename = "Data/ActiveOrders";
-
         Controller ctr = new Controller();
 
         ctr.runProgram(pizzass);
