@@ -13,7 +13,6 @@ public class Pizza {
         this.pris = pris;
         this.pizza_nr = pizza_nr;
         this.topping = topping;
-        
     }
 
     public String getNavn() {
@@ -50,13 +49,11 @@ public class Pizza {
 
     @Override
     public String toString() {
-	    String  msg= "";
-	    msg+=pizza_nr + ". ";
-	    msg+=pizza_name + ": ";
-	    msg+=topping + ". Pris: ";
-	    msg+=pris;
-	    return msg;
+        String msg = "";
+        msg += pizza_nr + ". ";
+        msg += pizza_name + ": ";
+        msg += topping + ". Pris: ";
+        msg += pris;
+        return msg;
     }
-
 }
-*/

@@ -1,6 +1,7 @@
 package MariosPizza.View;
 
 public class MainMenuUI {
+
     public static void showMainMenu() {
         System.out.println("************************************************");
         System.out.println("Velkommen til Marios Pizza");
@@ -11,7 +12,7 @@ public class MainMenuUI {
         System.out.println("4. Afslut");
         System.out.println("************************************************");
     }
-    
+
     public static void viewSubMenu() {
         System.out.println("************************************************");
         System.out.println("Muligheder:");

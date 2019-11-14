@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.sql.*;
 import MariosPizza.Model.Pizza;
+
 public class Order {
 
     private ArrayList<Pizza> pizzas = new ArrayList<>();
@@ -25,8 +26,7 @@ public class Order {
 
     public Order() {
         this.orderID = IDFactory.getID();
-        
-        
+
     }
 
     public Order(String kundeNavn, int antal, int pizzaNr, int orderID) {
@@ -75,6 +75,7 @@ public class Order {
         }
         return totalPris;
     }
+
     public int getPris() {
         int Pris = 0;
         for (Pizza pizza : pizzas) {
@@ -83,21 +84,19 @@ public class Order {
         return Pris;
     }
 
-
-	@Override
-	public String toString() {
-		String msg = "";
-		msg += this.getOrderID() + ";";
-		msg += this.getKundeNavn()+ ";";
-		for (Pizza p: pizzas ) {
-			msg+= p.toString();
-			msg+="@";
-                        msg+="Test";
-		}
-		msg += "]";
-		return msg;
-	}
-    
+    @Override
+    public String toString() {
+        String msg = "";
+        msg += this.getOrderID() + ";";
+        msg += this.getKundeNavn() + ";";
+        for (Pizza p : pizzas) {
+            msg += p.toString();
+            msg += "@";
+            msg += "Test";
+        }
+        msg += "]";
+        return msg;
+    }
 
     public void userDialogue(MainPizzaList pizzass) throws ClassNotFoundException, SQLException {
         DBMapper mapper = new DBMapper();
@@ -110,13 +109,10 @@ public class Order {
         for (int i = 0; i < antal; i++) {
             System.out.println("Indtast pizza nummer");
             pizzaNr = mapper.DBAddStat();
-            pizzas.add(pizzass.pizzass.get(pizzaNr -  1));
+            pizzas.add(pizzass.pizzass.get(pizzaNr - 1));
             mapper.DBAddPizza(this);
-           
-            
         }
     }
-    
 
     public String listView() {
         String message = "";
@@ -125,16 +121,6 @@ public class Order {
             message += pizza.getNavn() + ";";
             message += "\n";
         }
-
         return message + "\n" + "\n";
     }
-
-   
-
-    
-    }
-            
-            
-        
-    
-
+}
