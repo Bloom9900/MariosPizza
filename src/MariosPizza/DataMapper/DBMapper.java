@@ -5,6 +5,7 @@
  */
 package MariosPizza.DataMapper;
 
+import MariosPizza.Model.MainPizzaList;
 import MariosPizza.Model.Order;
 import MariosPizza.Util.DBConnector;
 import java.sql.Connection;
@@ -20,10 +21,15 @@ import java.util.Scanner;
 
 /**
  *
- * @author angry
+ * @author Artem
  */
-//Henter menuen fra databasen.
 public class DBMapper {
+
+    ArrayList pizzaInf;
+
+    public ArrayList getPizzaInf() {
+        return pizzaInf;
+    }
 
     public ArrayList<Pizza> pizzaList() throws ClassNotFoundException, SQLException {
         ArrayList<Pizza> returnList = new ArrayList<>();
@@ -53,92 +59,88 @@ public class DBMapper {
         myConnector.close();
 
         return returnList;
-        
 
     }
-    
-    
-    
+
     // Sætter order ind i databassen
-     public  void DBAddPizza(Order pizzas){
-        try{
+    public void DBAddPizza(Order pizzas) {
+        try {
             String Customer_name = pizzas.getKundeNavn();
             int Order_ID = pizzas.getOrderID();
             int Pizza = pizzas.getPizzaNr();
             int Pris = pizzas.getPris();
-            
+
             Class.forName("com.mysql.cj.jdbc.Driver");
-   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/marriospizza?", "root", "klon3903202");
-   PreparedStatement pst = con.prepareStatement("insert into ordre(Order_ID,Customer_name,Pizza,Pris) values(?,?,?,?)");
- 
-     pst.setInt(1,Order_ID);
-     pst.setString(2, Customer_name);
-     pst.setInt(3, Pizza);
-     pst.setInt(4, Pris);
-        
-      int i = pst.executeUpdate();
-      if(i!=0){
-        System.out.println("added");
-      }
-      else{
-        System.out.println("failed to add");
-      }
-    }
-    catch (Exception e){
-     System.out.println(e);
-    }
-  }
-    
-    
-    
-    
-    ArrayList pizzaInf;
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/marriospizza?", "root", "klon3903202");
+            PreparedStatement pst = con.prepareStatement("insert into ordre(Order_ID,Customer_name,Pizza,Pris) values(?,?,?,?)");
 
-    public ArrayList getPizzaInf() {
-        return pizzaInf;
-    }
-    //henter pizzaer fra dabassen
-     public ArrayList DBGetPizza() throws SQLException{
-           ArrayList pizzaInf = new ArrayList<>();
-      Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/marriospizza?", "root", "klon3903202");
-      Order odr = new Order();
- 
-   try {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Vælg pizza:");
-            int str = sc.nextInt();
+            pst.setInt(1, Order_ID);
+            pst.setString(2, Customer_name);
+            pst.setInt(3, Pizza);
+            pst.setInt(4, Pris);
 
-            Statement stmt2 = null;
-            String query2 = "SELECT * FROM pizzamenu  WHERE Pizza_nr =" + str + "";
-            stmt2 = con.createStatement();
-            ResultSet result = stmt2.executeQuery(query2);
-            while (result.next()) {
-                int pizza_nr = (int) result.getInt("Pizza_nr");
-                String pizza_name = (String) result.getString("Pizza_name");
-                String topping = (String) result.getString("Topping");
-                int pris = (int) result.getInt("Pris");
-                System.out.println(pizza_nr + pizza_name + topping + pris);
-                
-                 Pizza tmpPizza = new Pizza(pizza_name, pris, pizza_nr, topping);
-                 pizzaInf.add(tmpPizza);
+            int i = pst.executeUpdate();
+            if (i != 0) {
+                System.out.println("added");
+            } else {
+                System.out.println("failed to add");
             }
         } catch (Exception e) {
             System.out.println(e);
         }
-        return pizzaInf;
+    }
+
+    // Sætter order ind i databassen
+    public int DBAddStat() {
+
+        Scanner sc = new Scanner(System.in);
+        int str = sc.nextInt();
+        try {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/marriospizza?", "root", "klon3903202");
+            PreparedStatement pst = con.prepareStatement("UPDATE statistik SET antal = antal + 1 WHERE Pizza_nr =" + str + "");
+
+            int i = pst.executeUpdate();
+
+            if (i != 0) {
+            } else {
+                System.out.println("failed to add");
+
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        return str;
+    }
+
+    public void DBAddOmst() {
+        
+        try {
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/marriospizza?", "root", "klon3903202");
+
+            PreparedStatement pst2 = con.prepareStatement("UPDATE statistik SET Omsætning = Omsætning + Omsætning WHERE antal = +1");
+            
+
+            int i = pst2.executeUpdate();
+            if (i != 0) {
+            } else {
+                System.out.println("failed to add");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }
-   
-      
-    
-     
 
-   
     
-    
-    
-    
-    /*
+
+
+
+/*
     //trækker ordren ud af databassen ind i programmet
      public static Order getOrderFromDBByID(int id) throws ClassNotFoundException, SQLException {
         Order retValOrder = null;
@@ -167,7 +169,3 @@ public class DBMapper {
         
         return retValOrder;
     }*/
-    
-    
-    
-

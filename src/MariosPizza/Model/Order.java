@@ -99,8 +99,6 @@ public class Order {
 
     public void userDialogue(MainPizzaList pizzass) throws ClassNotFoundException, SQLException {
         DBMapper mapper = new DBMapper();
-        MainPizzaList myList = new MainPizzaList();
-        
         Scanner myScan = new Scanner(System.in);
         System.out.println("Indtast kundenavn: ");
         kundeNavn = myScan.nextLine();
@@ -109,9 +107,10 @@ public class Order {
         myScan.nextLine();
         for (int i = 0; i < antal; i++) {
             System.out.println("Indtast pizza nummer");
-            pizzaNr = myScan.nextInt();
+            pizzaNr = mapper.DBAddStat();
             pizzas.add(pizzass.pizzass.get(pizzaNr -  1));
             mapper.DBAddPizza(this);
+            mapper.DBAddOmst();
             
         }
     }
