@@ -3,13 +3,11 @@ package MariosPizza.Model;
 //@Jannich
 import MariosPizza.DataMapper.DBMapper;
 import java.text.SimpleDateFormat;
-import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.sql.*;
 import MariosPizza.Model.Pizza;
-import MariosPizza.DataMapper.DBMapper;
 public class Order {
 
     private ArrayList<Pizza> pizzas = new ArrayList<>();
@@ -18,10 +16,11 @@ public class Order {
     private int pizzaNr;
     private int orderID;
 
-    private final Date creationDate = new Date();
+    private final Date date = new Date();
 
-    public Date getOrderDate() {
-        return creationDate;
+    public String getOrderDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        return sdf.format(date);
     }
 
     public Order() {
@@ -83,14 +82,13 @@ public class Order {
 
 	@Override
 	public String toString() {
-		LocalTime timestamp = LocalTime.now();
 		String msg = "";
 		msg += this.getOrderID() + ";";
 		msg += this.getKundeNavn()+ ";";
-		msg += timestamp + ";[";
 		for (Pizza p: pizzas ) {
 			msg+= p.toString();
 			msg+="@";
+                        msg+="Test";
 		}
 		msg += "]";
 		return msg;

@@ -107,11 +107,11 @@ public class Orderlist {
     public String toStringView() {
         String view = "";
         for (Order order : olist) {
-            order.getOrderDate();
-            view += order.getOrderID() + ";";
-            view += order.getOrderDate() + ": ";
-            view += order.getKundeNavn() + ";";
-            view += order.getPizzas() + ";";
+            view += "Bestillingstidspunkt ";
+            view += order.getOrderDate() + " - ID: ";
+            view += order.getOrderID() + ". ";
+            view += order.getKundeNavn() + " ";
+            view += order.getPizzas() + " Totalpris: ";
             view += order.getTotalPris();
             view += "\n";
         }

@@ -68,7 +68,7 @@ public class DBMapper {
             int Pris = pizzas.getPris();
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/marriospizza?", "root", "klon3903202");
+   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mariospizza?", "root", "password");
    PreparedStatement pst = con.prepareStatement("insert into ordre(Order_ID,Customer_name,Pizza,Pris) values(?,?,?,?)");
  
      pst.setInt(1,Order_ID);
