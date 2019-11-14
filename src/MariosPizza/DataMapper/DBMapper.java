@@ -71,23 +71,24 @@ public class DBMapper {
             int Pris = pizzas.getPris();
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/marriospizza?", "root", "klon3903202");
-            PreparedStatement pst = con.prepareStatement("insert into ordre(Order_ID,Customer_name,Pizza,Pris) values(?,?,?,?)");
-
-            pst.setInt(1, Order_ID);
-            pst.setString(2, Customer_name);
-            pst.setInt(3, Pizza);
-            pst.setInt(4, Pris);
-
-            int i = pst.executeUpdate();
-            if (i != 0) {
-                System.out.println("added");
-            } else {
-                System.out.println("failed to add");
-            }
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mariospizza?", "root", "password");
+   PreparedStatement pst = con.prepareStatement("insert into ordre(Order_ID,Customer_name,Pizza,Pris) values(?,?,?,?)");
+ 
+     pst.setInt(1,Order_ID);
+     pst.setString(2, Customer_name);
+     pst.setInt(3, Pizza);
+     pst.setInt(4, Pris);
+        
+      int i = pst.executeUpdate();
+      if(i!=0){
+        System.out.println("added");
+      }
+      else{
+        System.out.println("failed to add");
+      }
+    }
+    catch (Exception e){
+     System.out.println(e);
     }
 
     // Sætter order ind i databassen

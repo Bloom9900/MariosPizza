@@ -29,16 +29,11 @@ public class Controller {
                     break;
                 case 2:
                     MainMenuUI.viewSubMenu();
+                    DBMapper db = new DBMapper();
                     int svar = myScan.nextInt();
                     if (svar == 1) {
-                        DBMapper db = new DBMapper();
                         orders.makeOrder(pizzass);
-                        
-                        
-                        
-
                        // makeOrder(menu);
-
                     }
                     if (svar == 2) {
                         System.out.println(orders.toStringView());
